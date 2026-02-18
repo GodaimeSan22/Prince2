@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRINCE2 7 | Ultimate Framework Explorer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #3b82f6;
+            --accent: #60a5fa;
+            --bg: #05070a;
+            --card-bg: rgba(15, 23, 42, 0.6);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            background-image: 
+                radial-gradient(circle at 0% 0%, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 100% 100%, rgba(37, 99, 235, 0.05) 0%, transparent 50%);
+            color: #e2e8f0;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .font-display {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .cyber-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cyber-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 2px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+            transform: translateX(-100%);
+            transition: 0.5s;
+        }
+
+        .cyber-card:hover::before {
+            transform: translateX(100%);
+        }
+
+        .cyber-card:hover {
+            border-color: rgba(59, 130, 246, 0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+        }
+
+        .tab-active {
+            color: white;
+            background: rgba(59, 130, 246, 0.1);
+            border-bottom: 2px solid var(--primary);
+        }
+
+        .scroll-hide::-webkit-scrollbar { display: none; }
+        
+        @keyframes pulse-glow {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+        .glow-dot { animation: pulse-glow 2s infinite; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Top Navigation -->
+    <nav class="sticky top-0 z-50 border-b border-white/5 bg-black/40 backdrop-blur-xl">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center font-bold text-white shadow-lg shadow-blue-500/20">P2</div>
+                <div>
+                    <span class="block text-lg font-bold tracking-tight font-display">PRINCE2 <span class="text-blue-500">v7</span></span>
+                    <span class="text-[10px] uppercase tracking-[0.2em] text-slate-500 font-bold">Strategic Nexus</span>
+                </div>
+            </div>
+            
+            <div class="hidden md:flex bg-white/5 p-1 rounded-full border border-white/10">
+                <button onclick="switchCategory('principles')" id="nav-principles" class="nav-btn px-6 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all">Principles</button>
+                <button onclick="switchCategory('practices')" id="nav-practices" class="nav-btn px-6 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all">Practices</button>
+                <button onclick="switchCategory('processes')" id="nav-processes" class="nav-btn px-6 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all">Processes</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-6 py-12">
+        <header class="mb-16">
+            <h2 id="category-title" class="text-5xl font-black mb-4 tracking-tighter italic">Principles</h2>
+            <p id="category-desc" class="text-slate-400 max-w-2xl text-lg leading-relaxed font-light">The foundational obligations that determine if a project is genuinely being managed using PRINCE2.</p>
+        </header>
+
+        <div id="content-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Dynamic Content -->
+        </div>
+    </main>
+
+    <!-- Side Panel (Overlay) -->
+    <div id="side-panel" class="fixed inset-y-0 right-0 w-full md:w-[600px] bg-[#0a0c10] border-l border-white/10 z-[60] transform translate-x-full transition-transform duration-500 ease-in-out shadow-2xl">
+        <div class="h-full flex flex-col">
+            <div class="p-8 border-b border-white/5 flex justify-between items-center">
+                <button onclick="togglePanel(false)" class="p-2 hover:bg-white/5 rounded-full transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+                <span class="text-[10px] font-bold uppercase tracking-widest text-blue-500">Technical Briefing</span>
+            </div>
+            <div id="panel-body" class="flex-1 overflow-y-auto p-8 scroll-hide">
+                <!-- Detailed content injected here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const data = {
+            principles: {
+                title: "Principles",
+                desc: "The universal 'rules' of PRINCE2. If these seven principles are not applied, the project is not a PRINCE2 project.",
+                items: [
+                    { id: 'p1', name: 'Continued Business Justification', icon: '💎', summary: 'A project must make sense from start to finish.', details: 'The justification is documented in the Business Case. If the justification disappears (e.g., market change), the project must be stopped or changed.', roles: ['Project Board', 'Executive'], keywords: ['ROI', 'Value', 'Viability'] },
+                    { id: 'p2', name: 'Learn from Experience', icon: '🧠', summary: 'Lessons are sought, recorded and acted upon.', details: 'Project teams should look for lessons from previous projects, record new lessons during the project, and pass them on at the end.', roles: ['All Personnel'], keywords: ['Lessons Log', 'Maturity', 'Continuous Improvement'] },
+                    { id: 'p3', name: 'Defined Roles & Responsibilities', icon: '👥', summary: 'Structure of the right people in the right places.', details: 'PRINCE2 identifies three primary stakeholders: Business, User, and Supplier. Every person in the project management team should know what is expected of them.', roles: ['Executive', 'Senior User', 'Senior Supplier'], keywords: ['Organization', 'Accountability', 'Delegation'] },
+                    { id: 'p4', name: 'Manage by Stages', icon: '🪜', summary: 'Break the project into manageable chunks.', details: 'The Project Board delegates day-to-day management to the PM stage by stage. A project has at least two stages: Initiation and one further delivery stage.', roles: ['Project Manager', 'Project Board'], keywords: ['Control', 'Go/No-Go', 'Planning'] },
+                    { id: 'p5', name: 'Manage by Exception', icon: '⚡', summary: 'Only escalate when things go outside limits.', details: 'Delegating authority by setting tolerances (Time, Cost, Quality, Scope, Risk, Benefits). If a stage is within tolerance, the Board doesn\'t need to interfere.', roles: ['Project Manager', 'Corporate/Program'], keywords: ['Tolerances', 'Escalation', 'Empowerment'] },
+                    { id: 'p6', name: 'Focus on Products', icon: '📦', summary: 'Defining results before defining activities.', details: 'A project focuses on the definition and delivery of products, especially their quality requirements. This avoids "scope creep" and rework.', roles: ['Team Manager', 'Project Manager'], keywords: ['Product Descriptions', 'Quality', 'Expectations'] },
+                    { id: 'p7', name: 'Tailor to Suit Project', icon: '⚙️', summary: 'PRINCE2 is not a "one size fits all" method.', details: 'The method should be adapted to the project\'s size, complexity, importance, capability, and risk. Tailoring is documented in the PID.', roles: ['Project Manager', 'Project Assurance'], keywords: ['Scaling', 'Flexibility', 'Efficiency'] }
+                ]
+            },
+            practices: {
+                title: "Practices",
+                desc: "Aspects of project management that must be addressed continually throughout the project lifecycle.",
+                items: [
+                    { id: 'pr1', name: 'Business Case', icon: '📊', summary: 'Establishing the value proposition.', details: 'The Practice that ensures the project is worth it. It covers why the project is needed and how the benefits will be measured.', docs: ['Business Case', 'Benefits Management Approach'], roles: ['Executive'], color: 'blue' },
+                    { id: 'pr2', name: 'Organizing', icon: '🏗️', summary: 'Building the project ecosystem.', details: 'Focuses on the People side of PRINCE2 7. It defines the team structure and how communication flows between levels.', docs: ['Communication Management Approach', 'Role Descriptions'], roles: ['Project Manager'], color: 'indigo' },
+                    { id: 'pr3', name: 'Plans', icon: '🗺️', summary: 'Mapping the journey to the objective.', details: 'Deals with the "How, When, and How Much". PRINCE2 uses product-based planning.', docs: ['Project Plan', 'Stage Plan', 'Team Plan', 'Work Package'], roles: ['Project Manager', 'Team Manager'], color: 'cyan' },
+                    { id: 'pr4', name: 'Quality', icon: '✨', summary: 'Ensuring products are fit for purpose.', details: 'Links back to "Focus on Products". This practice ensures that the user\'s expectations are met through strict quality criteria.', docs: ['Quality Management Approach', 'Product Descriptions', 'Quality Register'], roles: ['Project Assurance'], color: 'emerald' },
+                    { id: 'pr5', name: 'Risk', icon: '🎲', summary: 'Managing uncertainty.', details: 'A systematic approach to identifying, assessing, and controlling uncertain events that could impact the project.', docs: ['Risk Management Approach', 'Risk Register'], roles: ['All Roles'], color: 'rose' },
+                    { id: 'pr6', name: 'Issues', icon: '🚩', summary: 'Managing changes and problems.', details: 'Deals with any event that has happened (unlike risk) and requires action. Includes Requests for Change and Off-specifications.', docs: ['Change Control Approach', 'Issue Register', 'Issue Report'], roles: ['Project Manager'], color: 'orange' },
+                    { id: 'pr7', name: 'Progress', icon: '📈', summary: 'Tracking where we are vs where we planned.', details: 'The mechanism to monitor and control. Compares actuals to plans to ensure the project remains viable.', docs: ['Lessons Log', 'Highlight Report', 'Checkpoint Report', 'End Stage Report'], roles: ['Project Board', 'PM'], color: 'violet' }
+                ]
+            },
+            processes: {
+                title: "Processes",
+                desc: "The chronological steps from starting up to closing down the project.",
+                items: [
+                    { id: 'pc1', name: 'Starting Up a Project (SU)', icon: '🏁', summary: 'Is there a viable project?', details: 'Pre-project process. Designed to ensure that the prerequisites for initiating a project are in place.', docs: ['Project Brief', 'Lessons Log', 'Outline Business Case'], input: 'Project Mandate', output: 'Request to Initiate', color: 'slate' },
+                    { id: 'pc2', name: 'Initiating a Project (IP)', icon: '📐', summary: 'Planning the foundation.', details: 'Establish solid foundations for the project, enabling the organization to understand the work that needs to be done to deliver the products.', docs: ['PID', 'Detailed Business Case', 'Project Plan'], input: 'Authorization to Initiate', output: 'Request to Deliver', color: 'slate' },
+                    { id: 'pc3', name: 'Directing a Project (DP)', icon: '👑', summary: 'Steering the ship.', details: 'The Project Board\'s process. They make decisions, authorize stages, and provide overall direction while delegating day-to-day work.', docs: ['Authorization Notification'], input: 'Stage Reports', output: 'Decisions', color: 'slate' },
+                    { id: 'pc4', name: 'Controlling a Stage (CS)', icon: '🕹️', summary: 'The Project Manager\'s daily work.', details: 'Monitoring work, managing risks/issues, and taking corrective action to ensure the stage stays within tolerance.', docs: ['Work Packages', 'Highlight Reports', 'Issue Reports'], input: 'Authorized Stage Plan', output: 'Completed Products', color: 'slate' },
+                    { id: 'pc5', name: 'Managing Product Delivery (MP)', icon: '🛠️', summary: 'The Team Manager\'s domain.', details: 'The bridge between the PM and the technical teams. Focuses on the creation of the actual products.', docs: ['Team Plans', 'Checkpoint Reports'], input: 'Work Package', output: 'Completed Work Package', color: 'slate' },
+                    { id: 'pc6', name: 'Managing a Stage Boundary (SB)', icon: '🚧', summary: 'Preparing for the next stage.', details: 'Review the current stage and plan the next. Provide the Project Board with information to decide whether to continue.', docs: ['End Stage Report', 'Next Stage Plan', 'Updated PID'], input: 'Progress Data', output: 'Request for Next Stage', color: 'slate' },
+                    { id: 'pc7', name: 'Closing a Project (CP)', icon: '🔒', summary: 'Handover and wrap-up.', details: 'A fixed point to verify the project has reached its end. Decommissioning the project and handing over products.', docs: ['End Project Report', 'Lessons Report', 'Follow-on Recommendations'], input: 'Closing Trigger', output: 'Project Closure Notification', color: 'slate' }
+                ]
+            }
+        };
+
+        let currentCategory = 'principles';
+
+        function switchCategory(cat) {
+            currentCategory = cat;
+            document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('tab-active'));
+            document.getElementById(`nav-${cat}`).classList.add('tab-active');
+            
+            document.getElementById('category-title').innerText = data[cat].title;
+            document.getElementById('category-desc').innerText = data[cat].desc;
+            
+            renderCards();
+        }
+
+        function renderCards() {
+            const container = document.getElementById('content-grid');
+            container.innerHTML = '';
+            
+            data[currentCategory].items.forEach(item => {
+                const div = document.createElement('div');
+                div.className = 'cyber-card p-8 rounded-3xl cursor-pointer group';
+                div.onclick = () => openDetails(item);
+                
+                div.innerHTML = `
+                    <div class="flex justify-between items-start mb-6">
+                        <span class="text-4xl group-hover:scale-110 transition-transform">${item.icon}</span>
+                        <div class="p-2 bg-white/5 rounded-lg border border-white/5 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <svg class="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 font-display">${item.name}</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">${item.summary}</p>
+                    <div class="mt-6 flex flex-wrap gap-2">
+                        ${(item.keywords || item.docs || []).slice(0, 2).map(k => `<span class="text-[9px] uppercase tracking-wider font-bold text-slate-500 bg-white/5 px-2 py-1 rounded-md border border-white/5">${k}</span>`).join('')}
+                    </div>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        function openDetails(item) {
+            const body = document.getElementById('panel-body');
+            
+            let extraSection = '';
+            if (item.docs) {
+                extraSection = `
+                    <div class="mt-10">
+                        <h4 class="text-xs font-bold text-blue-500 uppercase tracking-[0.2em] mb-4">Management Products</h4>
+                        <div class="grid grid-cols-1 gap-3">
+                            ${item.docs.map(doc => `
+                                <div class="p-4 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-between hover:border-blue-500/30 transition-colors">
+                                    <div class="flex items-center gap-4">
+                                        <div class="w-8 h-8 rounded-lg bg-blue-500/20 flex items-center justify-center text-blue-400">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" stroke-width="2"/></svg>
+                                        </div>
+                                        <span class="text-sm font-semibold">${doc}</span>
+                                    </div>
+                                    <span class="text-[10px] text-slate-500 font-bold uppercase">Dynamic</span>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            }
+
+            let flowSection = '';
+            if (item.input || item.output) {
+                flowSection = `
+                    <div class="mt-10 p-6 bg-blue-900/10 border border-blue-500/20 rounded-3xl">
+                        <div class="flex flex-col gap-6">
+                            <div>
+                                <span class="text-[10px] font-bold text-blue-400 uppercase tracking-widest block mb-1">Primary Input</span>
+                                <p class="text-lg font-display text-white">${item.input || 'N/A'}</p>
+                            </div>
+                            <div class="w-full h-px bg-white/10 relative">
+                                <div class="absolute inset-y-[-4px] left-0 w-2 h-2 rounded-full bg-blue-500 glow-dot"></div>
+                            </div>
+                            <div>
+                                <span class="text-[10px] font-bold text-blue-400 uppercase tracking-widest block mb-1">Primary Output</span>
+                                <p class="text-lg font-display text-white">${item.output || 'N/A'}</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            body.innerHTML = `
+                <div class="mb-10">
+                    <span class="text-5xl mb-6 block">${item.icon}</span>
+                    <h2 class="text-4xl font-black font-display mb-4">${item.name}</h2>
+                    <p class="text-slate-400 text-lg leading-relaxed">${item.details}</p>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 mb-10">
+                    <div class="p-4 bg-white/5 rounded-2xl border border-white/5">
+                        <span class="text-[10px] font-bold text-slate-500 uppercase tracking-widest block mb-2">Key Accountabilities</span>
+                        <div class="flex flex-wrap gap-2">
+                            ${(item.roles || []).map(r => `<span class="text-xs font-semibold text-slate-300">${r}</span>`).join('<span class="text-slate-600">•</span>')}
+                        </div>
+                    </div>
+                </div>
+
+                ${flowSection}
+                ${extraSection}
+                
+                <div class="mt-12 p-8 border-t border-white/5">
+                    <p class="text-xs text-slate-600 italic">PRINCE2 7 Method Reference: Section ${item.id.toUpperCase()}</p>
+                </div>
+            `;
+            
+            togglePanel(true);
+        }
+
+        function togglePanel(show) {
+            const panel = document.getElementById('side-panel');
+            panel.style.transform = show ? 'translateX(0)' : 'translateX(100%)';
+            document.body.style.overflow = show ? 'hidden' : 'auto';
+        }
+
+        window.onload = () => switchCategory('principles');
+    </script>
+</body>
+</html>
