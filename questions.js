@@ -626,11 +626,17 @@ const questions = [
         rationale: "Sustainability is the 7th performance aspect in PRINCE2 7. Environmental targets are managed as sustainability tolerances."
     },
     {
-        category: "BUSINESS CASE",
-        question: "During a stage, the project manager recorded a new risk on the risk register. In which step of the business case management technique should its impact be assessed?",
-        options: ["Develop", "Check", "Maintain", "Confirm"],
-        correct: 2,
-        rationale: "'Maintain' is the step where the Business Case is updated to reflect changes, including the impact of new risks or issues."
+    id: 101,
+    category: "Practices: Business Case",
+    question: "During a stage, the project manager recorded a new risk on the risk register. In which step of the business case management technique should its impact on the business case be assessed?",
+    options: [
+        "Develop",
+        "Check",
+        "Maintain",
+        "Confirm"
+    ],
+    correct: 1, // Індекс 1 відповідає 'Check'
+    rationale: "The 'Check' step involves assessing the project's continued viability and desirability, especially when new risks or issues are identified. 'Maintain' is focused on updating the business case with actuals and forecasts."
     },
     {
         category: "ORGANIZING",
