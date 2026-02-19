@@ -3,194 +3,174 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>7 Principles | PRINCE2 Master</title>
+    <title>7 Processes | PRINCE2 Master</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(12px); }
+        .nav-active { border-bottom: 2px solid #3b82f6; opacity: 1 !important; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .detail-badge { @apply text-[9px] font-bold px-2 py-0.5 rounded bg-white/5 text-slate-400 uppercase tracking-tighter; }
+    </style>
 </head>
 <body class="bg-[#030712] text-white">
 
     <header class="p-6 md:p-12 max-w-7xl mx-auto">
         <div class="flex items-center gap-2 mb-4">
-            <span class="badge-v7 tracking-tighter text-white">THE FOUNDATION</span>
-            <span class="text-slate-500 text-[10px] font-bold tracking-widest uppercase">Guiding Obligations</span>
+            <span class="bg-blue-600 px-2 py-0.5 rounded text-[10px] font-bold tracking-tighter text-white uppercase">LIFECYCLE</span>
+            <span class="text-slate-500 text-[10px] font-bold tracking-widest uppercase">The Chronological Flow</span>
         </div>
-        <h1 class="text-5xl font-black italic uppercase">The 7 <span class="text-blue-500">Principles</span></h1>
-        <p class="text-slate-400 mt-4 max-w-2xl">Principles are the bedrock of PRINCE2. They are universal, self-validating, and empowering. If any of these are not applied, it is not a PRINCE2 project.</p>
+        <h1 class="text-5xl font-black italic uppercase">The 7 <span class="text-blue-500">Processes</span></h1>
+        <p class="text-slate-400 mt-4 max-w-2xl">Processes describe a step-by-step progression from the pre-project start to the final closure. They tell you "What to do, When, and by Whom."</p>
     </header>
 
     <nav class="sticky top-0 z-40 glass border-y border-white/5">
         <div class="max-w-7xl mx-auto px-6 flex overflow-x-auto no-scrollbar">
             <a href="index.html" class="py-5 px-6 text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 whitespace-nowrap">Overview</a>
-            <a href="principles.html" class="py-5 px-6 text-xs font-bold uppercase tracking-widest nav-active whitespace-nowrap">Principles</a>
+            <a href="principles.html" class="py-5 px-6 text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 whitespace-nowrap">Principles</a>
             <a href="practices.html" class="py-5 px-6 text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 whitespace-nowrap">Practices</a>
-            <a href="processes.html" class="py-5 px-6 text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 whitespace-nowrap">Processes</a>
+            <a href="roles.html" class="py-5 px-6 text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 whitespace-nowrap">Roles</a>
+            <a href="processes.html" class="py-5 px-6 text-xs font-bold uppercase tracking-widest nav-active whitespace-nowrap">Processes</a>
             <a href="documents.html" class="py-5 px-6 text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 whitespace-nowrap">Documents</a>
             <a href="glossary.html" class="py-5 px-6 text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 whitespace-nowrap">Glossary</a>
         </div>
     </nav>
 
-    <main class="max-w-7xl mx-auto px-6 py-12 space-y-12">
+    <main class="max-w-7xl mx-auto px-6 py-12">
+        
+        <div class="mb-16 text-center">
+            <h3 class="text-xs font-bold text-slate-500 uppercase tracking-[0.3em] mb-8">Process Model Overview</h3>
+            
+        </div>
 
-        <section class="glass p-8 md:p-12 rounded-[3rem] border border-white/5 relative overflow-hidden">
-            <div class="absolute top-0 right-0 p-8 text-8xl font-black text-white/5 select-none">01</div>
-            <div class="relative z-10">
-                <h2 class="text-3xl font-bold mb-6 text-blue-400">Continued Business Justification</h2>
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                    <div>
-                        <p class="text-slate-300 leading-relaxed mb-6">
-                            A PRINCE2 project requires a justifiable reason to start it, and that justification must remain valid throughout its life. It is documented in the <b>Business Case</b>.
-                        </p>
-                        <ul class="space-y-3">
-                            <li class="flex items-center gap-3 text-sm text-slate-400 italic">
-                                <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
-                                Prevents projects from continuing if they no longer offer value.
-                            </li>
-                            <li class="flex items-center gap-3 text-sm text-slate-400 italic">
-                                <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
-                                Justification must be aligned with the Business Objectives.
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="bg-blue-600/5 p-6 rounded-2xl border border-blue-500/10">
-                        <h4 class="text-xs font-bold uppercase text-blue-500 mb-4 tracking-widest">Exam Key Point</h4>
-                        <p class="text-sm text-slate-300">If the project is no longer justifiable, the Project Manager must escalate this to the Project Board. The Board has the authority to stop the project early.</p>
-                    </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            
+            <div class="glass p-8 rounded-[2.5rem] border border-white/5 relative">
+                <div class="flex justify-between items-start mb-4">
+                    <div class="text-blue-500 font-black text-4xl">SU</div>
+                    <span class="detail-badge">Pre-Project</span>
+                </div>
+                <h2 class="text-xl font-bold uppercase mb-4 text-blue-400">Starting Up a Project</h2>
+                <div class="space-y-4 text-sm text-slate-400">
+                    <p>Мета: Перевірити, чи є проєкт життєздатним ("Do we have a viable project?").</p>
+                    <ul class="list-disc list-inside space-y-1">
+                        <li>Призначення Executive та PM</li>
+                        <li>Створення <b class="text-white">Project Brief</b></li>
+                        <li>План стадії ініціації</li>
+                    </ul>
                 </div>
             </div>
-        </section>
 
-        <section class="glass p-8 md:p-12 rounded-[3rem] border border-white/5 relative overflow-hidden">
-            <div class="absolute top-0 right-0 p-8 text-8xl font-black text-white/5 select-none">02</div>
-            <div class="relative z-10">
-                <h2 class="text-3xl font-bold mb-6 text-blue-400">Learn from Experience</h2>
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                    <div>
-                        <p class="text-slate-300 leading-relaxed mb-4">
-                            PRINCE2 teams should actively seek lessons from previous projects. These are captured in the <b>Lessons Log</b> and passed on to future projects.
-                        </p>
-                        <p class="text-slate-400 text-sm">Everyone is responsible for learning: the Board, the PM, and the Team.</p>
-                    </div>
-                    <div class="bg-purple-600/5 p-6 rounded-2xl border border-purple-500/10">
-                        <h4 class="text-xs font-bold uppercase text-purple-500 mb-4 tracking-widest">Timeline of Learning</h4>
-                        <ul class="text-sm space-y-2 text-slate-300">
-                            <li><b class="text-white">Start:</b> Research previous lessons.</li>
-                            <li><b class="text-white">During:</b> Record new lessons in the Lessons Log.</li>
-                            <li><b class="text-white">Close:</b> Include lessons in the End Project Report.</li>
-                        </ul>
-                    </div>
+            <div class="glass p-8 rounded-[2.5rem] border border-blue-500/20 bg-blue-500/5 relative">
+                <div class="flex justify-between items-start mb-4">
+                    <div class="text-blue-400 font-black text-4xl">DP</div>
+                    <span class="detail-badge text-blue-400">Project Board</span>
+                </div>
+                <h2 class="text-xl font-bold uppercase mb-4 text-blue-400">Directing a Project</h2>
+                <div class="space-y-4 text-sm text-slate-400">
+                    <p>Єдиний процес для **Ради Проєкту**. Триває від SU до CP.</p>
+                    <ul class="list-disc list-inside space-y-1">
+                        <li>Затвердження ініціації та кожного етапу</li>
+                        <li>Прийняття рішень по <b class="text-white">Exceptions</b></li>
+                        <li>Надання спеціальних порад PM</li>
+                    </ul>
                 </div>
             </div>
-        </section>
 
-        <section class="glass p-8 md:p-12 rounded-[3rem] border border-white/5 relative overflow-hidden">
-            <div class="absolute top-0 right-0 p-8 text-8xl font-black text-white/5 select-none">03</div>
-            <div class="relative z-10">
-                <h2 class="text-3xl font-bold mb-6 text-blue-400">Defined Roles and Responsibilities</h2>
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                    <div>
-                        <p class="text-slate-300 leading-relaxed mb-6">
-                            A project must have an agreed team structure that includes the interests of <b>Business, Users, and Suppliers</b>.
-                        </p>
-                        <div class="flex gap-4">
-                            <span class="px-3 py-1 bg-white/5 rounded text-[10px] font-bold uppercase tracking-wider">Executive</span>
-                            <span class="px-3 py-1 bg-white/5 rounded text-[10px] font-bold uppercase tracking-wider">Senior User</span>
-                            <span class="px-3 py-1 bg-white/5 rounded text-[10px] font-bold uppercase tracking-wider">Senior Supplier</span>
+            <div class="glass p-8 rounded-[2.5rem] border border-white/5 relative">
+                <div class="flex justify-between items-start mb-4">
+                    <div class="text-purple-500 font-black text-4xl">IP</div>
+                    <span class="detail-badge">Initiation Stage</span>
+                </div>
+                <h2 class="text-xl font-bold uppercase mb-4 text-purple-400">Initiating a Project</h2>
+                <div class="space-y-4 text-sm text-slate-400">
+                    <p>Створення міцного фундаменту та детального планування.</p>
+                    
+                    <ul class="list-disc list-inside space-y-1">
+                        <li>Формування <b class="text-white">PID</b></li>
+                        <li>Детальний Business Case</li>
+                        <li>Стратегії управління (Ризики, Якість)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="glass p-8 rounded-[2.5rem] border border-white/5 relative">
+                <div class="flex justify-between items-start mb-4">
+                    <div class="text-green-500 font-black text-4xl">CS</div>
+                    <span class="detail-badge">Delivery Stages</span>
+                </div>
+                <h2 class="text-xl font-bold uppercase mb-4 text-green-400">Controlling a Stage</h2>
+                <div class="space-y-4 text-sm text-slate-400">
+                    <p>Повсякденна робота PM з управління робочою стадією.</p>
+                    <ul class="list-disc list-inside space-y-1">
+                        <li>Авторизація <b class="text-white">Work Packages</b></li>
+                        <li>Аналіз звітів (Checkpoint Reports)</li>
+                        <li>Управління Issue та Risk</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="glass p-8 rounded-[2.5rem] border border-white/5 relative">
+                <div class="flex justify-between items-start mb-4">
+                    <div class="text-yellow-500 font-black text-4xl">MP</div>
+                    <span class="detail-badge">Team Manager</span>
+                </div>
+                <h2 class="text-xl font-bold uppercase mb-4 text-yellow-400">Managing Product Delivery</h2>
+                <div class="space-y-4 text-sm text-slate-400">
+                    <p>Процес створення технічних продуктів проєкту.</p>
+                    <ul class="list-disc list-inside space-y-1">
+                        <li>Прийняття та виконання Work Package</li>
+                        <li>Демонстрація якості (Quality Records)</li>
+                        <li>Передача готових продуктів PM</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="glass p-8 rounded-[2.5rem] border border-white/5 relative">
+                <div class="flex justify-between items-start mb-4">
+                    <div class="text-orange-500 font-black text-4xl">SB</div>
+                    <span class="detail-badge">Boundary Point</span>
+                </div>
+                <h2 class="text-xl font-bold uppercase mb-4 text-orange-400">Managing a Stage Boundary</h2>
+                <div class="space-y-4 text-sm text-slate-400">
+                    <p>Підготовка до наступного етапу та звіт за поточний.</p>
+                    <ul class="list-disc list-inside space-y-1">
+                        <li>План наступної стадії</li>
+                        <li>Оновлення Project Plan та Business Case</li>
+                        <li>Звіт <b class="text-white">End Stage Report</b></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="glass p-8 rounded-[2.5rem] border border-red-500/20 bg-red-500/5 col-span-1 md:col-span-2">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="md:col-span-1">
+                        <div class="text-red-500 font-black text-4xl mb-4">CP</div>
+                        <h2 class="text-xl font-bold uppercase mb-2 text-red-400">Closing a Project</h2>
+                        <span class="detail-badge">Final Stage</span>
+                    </div>
+                    <div class="md:col-span-2 text-sm text-slate-400 space-y-4">
+                        <p>Організоване завершення проєкту. Запобігає безкінечному "дрейфу".</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <ul class="list-disc list-inside space-y-1">
+                                <li>Передача продуктів</li>
+                                <li>Звіт про витягнуті уроки</li>
+                            </ul>
+                            <ul class="list-disc list-inside space-y-1">
+                                <li>Звіт про завершення проєкту</li>
+                                <li>Рекомендація про закриття</li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="bg-blue-600/5 p-6 rounded-2xl border border-blue-500/10">
-                        <h4 class="text-xs font-bold uppercase text-blue-500 mb-4 tracking-widest">The Project Board</h4>
-                        <p class="text-sm text-slate-300 italic">The "Executive" is ultimately accountable for the project's success, supported by the Users (who need the products) and Suppliers (who build them).</p>
-                    </div>
                 </div>
             </div>
-        </section>
 
-        <section class="glass p-8 md:p-12 rounded-[3rem] border border-white/5 relative overflow-hidden">
-            <div class="absolute top-0 right-0 p-8 text-8xl font-black text-white/5 select-none">04</div>
-            <div class="relative z-10">
-                <h2 class="text-3xl font-bold mb-6 text-blue-400">Manage by Stages</h2>
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                    <div>
-                        <p class="text-slate-300 leading-relaxed">
-                            PRINCE2 mandates at least two management stages: the <b>Initiation Stage</b> and at least one <b>Delivery Stage</b>.
-                        </p>
-                        <p class="mt-4 text-slate-400 text-sm italic">Breaking the project into stages allows for better control and "go/no-go" decision points.</p>
-                    </div>
-                    <div class="bg-green-600/5 p-6 rounded-2xl border border-green-500/10">
-                        <h4 class="text-xs font-bold uppercase text-green-500 mb-4 tracking-widest">Management vs Technical</h4>
-                        <p class="text-sm text-slate-300">PRINCE2 focuses on <b>Management Stages</b> (decision points) rather than Technical Stages (type of work like 'Design' or 'Build').</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="glass p-8 md:p-12 rounded-[3rem] border border-white/5 relative overflow-hidden">
-            <div class="absolute top-0 right-0 p-8 text-8xl font-black text-white/5 select-none">05</div>
-            <div class="relative z-10">
-                <h2 class="text-3xl font-bold mb-6 text-blue-400">Manage by Exception</h2>
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                    <div>
-                        <p class="text-slate-300 leading-relaxed mb-6">
-                            Authority is delegated by setting <b>Tolerances</b>. The higher level only gets involved if these tolerances are predicted to be exceeded.
-                        </p>
-                        <div class="grid grid-cols-3 gap-2">
-                            <div class="text-[10px] p-2 bg-white/5 text-center rounded">TIME</div>
-                            <div class="text-[10px] p-2 bg-white/5 text-center rounded">COST</div>
-                            <div class="text-[10px] p-2 bg-white/5 text-center rounded">QUALITY</div>
-                            <div class="text-[10px] p-2 bg-white/5 text-center rounded">SCOPE</div>
-                            <div class="text-[10px] p-2 bg-white/5 text-center rounded">RISK</div>
-                            <div class="text-[10px] p-2 bg-white/5 text-center rounded">BENEFIT</div>
-                        </div>
-                    </div>
-                    <div class="bg-orange-600/5 p-6 rounded-2xl border border-orange-500/10">
-                        <h4 class="text-xs font-bold uppercase text-orange-500 mb-4 tracking-widest">Efficiency</h4>
-                        <p class="text-sm text-slate-300">This saves the Project Board from daily meetings. They "Manage by Exception" only when there is a problem (an Exception).</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="glass p-8 md:p-12 rounded-[3rem] border border-white/5 relative overflow-hidden">
-            <div class="absolute top-0 right-0 p-8 text-8xl font-black text-white/5 select-none">06</div>
-            <div class="relative z-10">
-                <h2 class="text-3xl font-bold mb-6 text-blue-400">Focus on Products</h2>
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                    <div>
-                        <p class="text-slate-300 leading-relaxed mb-4">
-                            Don't start with "What are we doing?" (Activities). Start with "What are we building?" (Products).
-                        </p>
-                        <p class="text-slate-400 text-sm">Every product must have a <b>Product Description</b> to ensure quality expectations are clear.</p>
-                    </div>
-                    <div class="bg-blue-600/5 p-6 rounded-2xl border border-blue-500/10 text-sm text-slate-300 italic">
-                        "Focus on the output, not just the work. If you don't know what you are building, you cannot plan for it."
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="glass p-8 md:p-12 rounded-[3rem] border border-white/5 relative overflow-hidden">
-            <div class="absolute top-0 right-0 p-8 text-8xl font-black text-white/5 select-none">07</div>
-            <div class="relative z-10">
-                <h2 class="text-3xl font-bold mb-6 text-blue-400">Tailor to Suit the Project</h2>
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                    <div>
-                        <p class="text-slate-300 leading-relaxed mb-4">
-                            PRINCE2 is not a rigid "one size fits all" method. It must be adapted to suit the project’s size, complexity, importance, capability, and risk.
-                        </p>
-                    </div>
-                    <div class="bg-white/5 p-6 rounded-2xl border border-white/10">
-                        <h4 class="text-xs font-bold uppercase text-slate-500 mb-4 tracking-widest">The Tailoring Rule</h4>
-                        <p class="text-sm text-slate-300">Tailoring is <b>mandatory</b>. You don't skip parts of PRINCE2; you scale them down or up to fit the context.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
+        </div>
     </main>
 
     <footer class="p-12 text-center text-slate-600 text-xs tracking-widest uppercase border-t border-white/5">
-        Master these 7 to master the foundation exam.
+        Mastering the flow: SU → IP → CS/MP (Loop) → SB → CP
     </footer>
 
 </body>

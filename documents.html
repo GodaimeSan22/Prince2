@@ -6,82 +6,125 @@
     <title>Management Products | PRINCE2 Master</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <style>
+        :root { --glass: rgba(255, 255, 255, 0.03); --glass-border: rgba(255, 255, 255, 0.08); }
+        body { font-family: 'Inter', sans-serif; background-color: #030712; color: white; }
+        h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; }
+        .glass { background: var(--glass); backdrop-filter: blur(12px); border: 1px solid var(--glass-border); }
+        .nav-active { border-bottom: 2px solid #3b82f6; color: white !important; opacity: 1 !important; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
 </head>
-<body class="bg-[#030712] text-white">
+<body class="selection:bg-blue-500/30">
 
     <header class="p-6 md:p-12 max-w-7xl mx-auto">
         <div class="flex items-center gap-2 mb-4">
-            <span class="badge-v7 tracking-tighter text-white">OUTPUTS</span>
-            <span class="text-slate-500 text-[10px] font-bold tracking-widest uppercase">Official Documentation</span>
+            <span class="bg-blue-600 px-2 py-0.5 rounded text-[10px] font-bold tracking-tighter text-white">OUTPUTS</span>
+            <span class="text-slate-500 text-[10px] font-bold tracking-widest uppercase italic">PRINCE2 7 Management Products</span>
         </div>
         <h1 class="text-5xl font-black italic uppercase">Management <span class="text-blue-500">Products</span></h1>
-        <p class="text-slate-400 mt-4 max-w-2xl">PRINCE2 identifies 26 management products. Below are the most critical ones for the Foundation exam, categorized by their type.</p>
+        <p class="text-slate-400 mt-4 max-w-2xl font-light leading-relaxed">
+            PRINCE2 identifies 26 management products. For the Foundation exam, you must distinguish between <b>Baselines</b> (plans), <b>Records</b> (dynamic logs), and <b>Reports</b> (status updates).
+        </p>
     </header>
 
-    <nav class="sticky top-0 z-40 glass border-y border-white/5">
+    <nav class="sticky top-0 z-40 glass border-y border-white/5 bg-[#030712]/80">
         <div class="max-w-7xl mx-auto px-6 flex overflow-x-auto no-scrollbar">
-            <a href="index.html" class="py-5 px-6 text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 whitespace-nowrap">Overview</a>
-            <a href="principles.html" class="py-5 px-6 text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 whitespace-nowrap">Principles</a>
-            <a href="practices.html" class="py-5 px-6 text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 whitespace-nowrap">Practices</a>
-            <a href="processes.html" class="py-5 px-6 text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 whitespace-nowrap">Processes</a>
-            <a href="documents.html" class="py-5 px-6 text-xs font-bold uppercase tracking-widest nav-active whitespace-nowrap">Documents</a>
-            <a href="glossary.html" class="py-5 px-6 text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 whitespace-nowrap">Glossary</a>
+            <a href="index.html" class="py-5 px-6 text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 transition-all whitespace-nowrap">Overview</a>
+            <a href="principles.html" class="py-5 px-6 text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 transition-all whitespace-nowrap">Principles</a>
+            <a href="practices.html" class="py-5 px-6 text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 transition-all whitespace-nowrap">Practices</a>
+            <a href="processes.html" class="py-5 px-6 text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 transition-all whitespace-nowrap">Processes</a>
+            <a href="roles.html" class="py-5 px-6 text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 transition-all whitespace-nowrap">Roles</a>
+            <a href="documents.html" class="py-5 px-6 text-xs font-bold uppercase tracking-widest nav-active whitespace-nowrap transition-all">Documents</a>
+            <a href="glossary.html" class="py-5 px-6 text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 transition-all whitespace-nowrap">Glossary</a>
         </div>
     </nav>
 
     <main class="max-w-7xl mx-auto px-6 py-12">
 
-        <section class="mb-16">
-            <h2 class="text-xs font-bold tracking-[0.4em] text-blue-500 uppercase mb-8 flex items-center gap-4">
-                Baseline Products <span class="h-px bg-blue-500/20 flex-grow"></span>
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                
-                <div class="glass p-6 rounded-3xl border border-white/5">
-                    <h3 class="text-lg font-bold mb-2">Project Brief</h3>
-                    <p class="text-xs text-slate-400 mb-4 italic">Process: Starting Up (SU)</p>
-                    <p class="text-sm text-slate-300 leading-relaxed">Used to provide a full and firm foundation for the initiation of the project. Contains the <b>Outline Business Case</b>.</p>
-                </div>
+        <section class="mb-20">
+            <div class="p-8 md:p-12 rounded-[3rem] bg-gradient-to-br from-blue-600/10 to-transparent border border-blue-500/20">
+                <div class="flex flex-col md:flex-row gap-12 items-start">
+                    <div class="md:w-1/3">
+                        <h2 class="text-4xl font-black uppercase italic leading-none mb-4">The <span class="text-blue-500 underline">PID</span></h2>
+                        <p class="text-xs font-bold tracking-widest text-blue-400 mb-6 uppercase">Project Initiation Documentation</p>
+                        <p class="text-sm text-slate-400 leading-relaxed">
+                            The PID is a logical "container" that gathers key information required to manage the project. It is assembled during the <b>Initiating a Project (IP)</b> process.
+                        </p>
+                    </div>
 
-                <div class="glass p-6 rounded-3xl border border-blue-500/30 bg-blue-500/5">
-                    <h3 class="text-lg font-bold mb-2 text-blue-400">PID (Project Initiation Documentation)</h3>
-                    <p class="text-xs text-slate-500 mb-4 italic">Process: Initiating a Project (IP)</p>
-                    <p class="text-sm text-slate-300 leading-relaxed">The single source of truth. It defines the project's 'why, what, when, and how'. It is the <b>Contract</b> between the PM and the Board.</p>
+                    <div class="md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="p-4 glass rounded-2xl border border-white/10">
+                            <h4 class="text-[10px] font-bold text-emerald-400 uppercase mb-2 tracking-widest italic">Approach: Sustainability</h4>
+                            <p class="text-[11px] text-slate-300">Defines how environmental and social targets will be managed (New in V7).</p>
+                        </div>
+                        <div class="p-4 glass rounded-2xl border border-white/10">
+                            <h4 class="text-[10px] font-bold text-blue-500 uppercase mb-2 tracking-widest italic">Approach: Communication</h4>
+                            <p class="text-[11px] text-slate-300">Specifies who needs what information, when, and in what format.</p>
+                        </div>
+                        <div class="p-4 glass rounded-2xl border border-white/10">
+                            <h4 class="text-[10px] font-bold text-blue-500 uppercase mb-2 tracking-widest italic">Approach: Change & Issue</h4>
+                            <p class="text-[11px] text-slate-300">Procedures for handling change requests and project issues.</p>
+                        </div>
+                        <div class="p-4 glass rounded-2xl border border-white/10">
+                            <h4 class="text-[10px] font-bold text-blue-500 uppercase mb-2 tracking-widest italic">Approach: Risk</h4>
+                            <p class="text-[11px] text-slate-300">Methods for identifying, assessing, and responding to risks.</p>
+                        </div>
+                        <div class="p-4 glass rounded-2xl border border-white/10">
+                            <h4 class="text-[10px] font-bold text-blue-500 uppercase mb-2 tracking-widest italic">Approach: Data & Digital</h4>
+                            <p class="text-[11px] text-slate-300">Use of digital tools and data management (New in V7).</p>
+                        </div>
+                        <div class="p-4 glass rounded-2xl border border-white/10">
+                            <h4 class="text-[10px] font-bold text-blue-500 uppercase mb-2 tracking-widest italic">Project Plan</h4>
+                            <p class="text-[11px] text-slate-300">The high-level schedule, resource requirements, and control points.</p>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="glass p-6 rounded-3xl border border-white/5">
-                    <h3 class="text-lg font-bold mb-2">Work Package</h3>
-                    <p class="text-xs text-slate-400 mb-4 italic">Process: Controlling a Stage (CS)</p>
-                    <p class="text-sm text-slate-300 leading-relaxed">The 'contract' between the PM and the Team Manager. Defines the work to be done and its constraints.</p>
-                </div>
-
             </div>
         </section>
 
         
 
-        <section class="mb-16">
+        <section class="mb-20">
+            <h2 class="text-xs font-bold tracking-[0.4em] text-blue-500 uppercase mb-8 flex items-center gap-4">
+                Baseline Products <span class="h-px bg-blue-500/20 flex-grow"></span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="glass p-6 rounded-3xl border border-white/5">
+                    <h3 class="text-lg font-bold mb-2 uppercase italic">Project Brief</h3>
+                    <p class="text-xs text-slate-500 mb-4 uppercase font-bold tracking-tighter">SU Process</p>
+                    <p class="text-sm text-slate-300">Used to provide a firm foundation for initiation. Contains the <b>Outline Business Case</b>.</p>
+                </div>
+                <div class="glass p-6 rounded-3xl border border-white/5">
+                    <h3 class="text-lg font-bold mb-2 uppercase italic">Work Package</h3>
+                    <p class="text-xs text-slate-500 mb-4 uppercase font-bold tracking-tighter">CS Process</p>
+                    <p class="text-sm text-slate-300">The "contract" between the PM and Team Manager defining the work to be done.</p>
+                </div>
+                <div class="glass p-6 rounded-3xl border border-white/5">
+                    <h3 class="text-lg font-bold mb-2 uppercase italic">Benefits Plan</h3>
+                    <p class="text-xs text-slate-500 mb-4 uppercase font-bold tracking-tighter">V7 Focus</p>
+                    <p class="text-sm text-slate-300">Defines how and when project benefits will be measured and realized.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-20">
             <h2 class="text-xs font-bold tracking-[0.4em] text-orange-500 uppercase mb-8 flex items-center gap-4">
                 Records & Logs <span class="h-px bg-orange-500/20 flex-grow"></span>
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                
-                <div class="glass p-6 rounded-3xl border border-white/5">
-                    <h3 class="text-lg font-bold mb-2">Daily Log</h3>
-                    <p class="text-sm text-slate-300 leading-relaxed">Used by the PM to record informal notes and issues that do not need a formal entry in the Issue Register.</p>
+                <div class="glass p-6 rounded-3xl border border-white/5 bg-orange-500/5">
+                    <h3 class="text-lg font-bold mb-2 text-orange-400 uppercase italic">Project Log</h3>
+                    <p class="text-sm text-slate-300 leading-relaxed">In Version 7, this is the repository for the Daily Log, Lessons Log, Issue, and Risk Registers.</p>
                 </div>
-
                 <div class="glass p-6 rounded-3xl border border-white/5">
-                    <h3 class="text-lg font-bold mb-2 text-orange-400">Lessons Log</h3>
-                    <p class="text-sm text-slate-300 leading-relaxed">A repository for lessons learned during the project or from previous projects. Crucial for the <b>Learn from Experience</b> principle.</p>
+                    <h3 class="text-lg font-bold mb-2 uppercase italic">Quality Register</h3>
+                    <p class="text-sm text-slate-300 leading-relaxed">Records all planned and completed quality activities (tests, inspections).</p>
                 </div>
-
                 <div class="glass p-6 rounded-3xl border border-white/5">
-                    <h3 class="text-lg font-bold mb-2">Issue Register</h3>
-                    <p class="text-sm text-slate-300 leading-relaxed">Used to capture and maintain information on all of the issues that are being formally managed.</p>
+                    <h3 class="text-lg font-bold mb-2 uppercase italic">Product Status Account</h3>
+                    <p class="text-sm text-slate-300 leading-relaxed">A snapshot report on the status of products at any given time.</p>
                 </div>
-
             </div>
         </section>
 
@@ -90,32 +133,28 @@
                 Report Products <span class="h-px bg-purple-500/20 flex-grow"></span>
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                
                 <div class="glass p-6 rounded-3xl border border-white/5">
-                    <h3 class="text-lg font-bold mb-2">Highlight Report</h3>
-                    <p class="text-xs text-slate-400 mb-4 italic">Frequency: Periodic</p>
-                    <p class="text-sm text-slate-300 leading-relaxed">From PM to Project Board. Provides a summary of the stage status at intervals defined in the PID.</p>
+                    <h3 class="text-lg font-bold mb-2 uppercase italic">Highlight Report</h3>
+                    <p class="text-xs text-slate-500 mb-4 italic">PM to Board</p>
+                    <p class="text-sm text-slate-300">Periodic report on stage progress and future outlook.</p>
                 </div>
-
-                <div class="glass p-6 rounded-3xl border border-purple-500/30 bg-purple-500/5">
-                    <h3 class="text-lg font-bold mb-2 text-purple-400">Checkpoint Report</h3>
-                    <p class="text-xs text-slate-500 mb-4 italic">Frequency: Periodic</p>
-                    <p class="text-sm text-slate-300 leading-relaxed">From Team Manager to PM. Provides a report of progress against a Work Package.</p>
+                <div class="glass p-6 rounded-3xl border border-purple-500/20 bg-purple-500/5">
+                    <h3 class="text-lg font-bold mb-2 text-purple-400 uppercase italic">Checkpoint Report</h3>
+                    <p class="text-xs text-slate-500 mb-4 italic">TM to PM</p>
+                    <p class="text-sm text-slate-300">Status report on the execution of a specific Work Package.</p>
                 </div>
-
                 <div class="glass p-6 rounded-3xl border border-white/5">
-                    <h3 class="text-lg font-bold mb-2">Exception Report</h3>
-                    <p class="text-xs text-slate-400 mb-4 italic">Triggered by: Exception</p>
-                    <p class="text-sm text-slate-300 leading-relaxed">Produced by the PM when a stage or project is forecast to exceed tolerance levels.</p>
+                    <h3 class="text-lg font-bold mb-2 uppercase italic">End Stage Report</h3>
+                    <p class="text-xs text-slate-500 mb-4 italic">SB Process</p>
+                    <p class="text-sm text-slate-300">Summary of the stage for the Board to decide whether to continue.</p>
                 </div>
-
             </div>
         </section>
 
     </main>
 
-    <footer class="p-12 text-center text-slate-600 text-xs tracking-widest uppercase border-t border-white/5">
-        Baseline, Record, or Report? Know the difference for the exam.
+    <footer class="p-12 text-center text-slate-600 text-[10px] tracking-widest uppercase border-t border-white/5">
+        Designed for PRINCE2 7 Excellence • Baseline, Record, or Report?
     </footer>
 
 </body>

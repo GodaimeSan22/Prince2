@@ -6,9 +6,16 @@
     <title>PRINCE2 7 | Master Encyclopedia</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <style>
+        :root { --glass: rgba(255, 255, 255, 0.03); --glass-border: rgba(255, 255, 255, 0.08); }
+        body { font-family: 'Inter', sans-serif; background-color: #030712; color: white; }
+        h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; }
+        .glass { background: var(--glass); backdrop-filter: blur(12px); border: 1px solid var(--glass-border); }
+        .nav-active { border-bottom: 2px solid #3b82f6; color: white !important; opacity: 1 !important; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
 </head>
-<body class="bg-[#030712] text-white">
+<body class="selection:bg-blue-500/30">
 
     <header class="p-6 md:p-20 max-w-7xl mx-auto text-center md:text-left">
         <div class="inline-flex items-center gap-2 mb-6 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20">
@@ -24,13 +31,13 @@
         </p>
     </header>
 
-    <nav class="sticky top-0 z-40 glass border-y border-white/5">
-        <div class="max-w-7xl mx-auto px-6 flex overflow-x-auto scroll-hide no-scrollbar">
+    <nav class="sticky top-0 z-40 glass border-y border-white/5 bg-[#030712]/80">
+        <div class="max-w-7xl mx-auto px-6 flex overflow-x-auto no-scrollbar">
             <a href="index.html" class="py-5 px-6 text-xs font-bold uppercase tracking-widest nav-active whitespace-nowrap">Overview</a>
             <a href="principles.html" class="py-5 px-6 text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 transition-all whitespace-nowrap">Principles</a>
             <a href="practices.html" class="py-5 px-6 text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 transition-all whitespace-nowrap">Practices</a>
             <a href="processes.html" class="py-5 px-6 text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 transition-all whitespace-nowrap">Processes</a>
-            <a href="roles.html" class="py-5 px-6 text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 whitespace-nowrap">Roles</a>
+            <a href="roles.html" class="py-5 px-6 text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 transition-all whitespace-nowrap">Roles</a>
             <a href="documents.html" class="py-5 px-6 text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 transition-all whitespace-nowrap">Documents</a>
             <a href="glossary.html" class="py-5 px-6 text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 transition-all whitespace-nowrap">Glossary</a>
         </div>
@@ -42,24 +49,24 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div>
                     <h2 class="text-3xl font-bold mb-6 italic tracking-tight uppercase">The Framework Structure</h2>
-                    <p class="text-slate-400 mb-8">PRINCE2 7 consists of four integrated elements that surround the project context. To pass the exam, you must understand how they interact.</p>
+                    <p class="text-slate-400 mb-8">PRINCE2 7 consists of <b>five</b> integrated elements (adding People) that surround the project context.</p>
                     
                     <div class="space-y-4">
                         <div class="p-4 rounded-2xl bg-white/5 border border-white/5 hover:border-blue-500/30 transition-all">
                             <h4 class="font-bold text-blue-400 uppercase text-xs mb-1">1. Principles</h4>
-                            <p class="text-sm text-slate-300">The 7 universal 'must-follow' rules for a project to be PRINCE2.</p>
+                            <p class="text-sm text-slate-300">The 7 universal 'must-follow' rules.</p>
                         </div>
-                        <div class="p-4 rounded-2xl bg-white/5 border border-white/5 hover:border-blue-500/30 transition-all">
-                            <h4 class="font-bold text-blue-400 uppercase text-xs mb-1">2. People</h4>
-                            <p class="text-sm text-slate-300">The core element (New in V7) focusing on culture and leadership.</p>
+                        <div class="p-4 rounded-2xl bg-white/5 border border-emerald-500/20 bg-emerald-500/5">
+                            <h4 class="font-bold text-emerald-400 uppercase text-xs mb-1">2. People</h4>
+                            <p class="text-sm text-slate-300">The center of the ecosystem (Culture & Leadership).</p>
                         </div>
                         <div class="p-4 rounded-2xl bg-white/5 border border-white/5 hover:border-blue-500/30 transition-all">
                             <h4 class="font-bold text-blue-400 uppercase text-xs mb-1">3. Practices</h4>
-                            <p class="text-sm text-slate-300">7 essential management areas used throughout the project.</p>
+                            <p class="text-sm text-slate-300">7 management areas, including Sustainability.</p>
                         </div>
                         <div class="p-4 rounded-2xl bg-white/5 border border-white/5 hover:border-blue-500/30 transition-all">
                             <h4 class="font-bold text-blue-400 uppercase text-xs mb-1">4. Processes</h4>
-                            <p class="text-sm text-slate-300">The step-by-step lifecycle from pre-project to closing.</p>
+                            <p class="text-sm text-slate-300">The 7 steps of the project lifecycle.</p>
                         </div>
                     </div>
                 </div>
@@ -71,8 +78,8 @@
                             <p class="text-[10px] font-bold tracking-[0.4em] text-blue-500 uppercase mb-2">Integrated</p>
                             <p class="text-4xl font-black italic">ELEMENTS</p>
                         </div>
-                        <div class="absolute top-10 left-10 w-3 h-3 bg-blue-500 rounded-full"></div>
-                        <div class="absolute bottom-20 right-5 w-2 h-2 bg-purple-500 rounded-full"></div>
+                        <div class="absolute top-10 left-10 w-3 h-3 bg-blue-500 rounded-full animate-pulse"></div>
+                        <div class="absolute bottom-20 right-5 w-2 h-2 bg-emerald-500 rounded-full"></div>
                     </div>
                 </div>
             </div>
@@ -84,46 +91,46 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
     
             <a href="principles.html" class="glass p-8 rounded-[2rem] border border-white/5 hover:scale-[1.02] transition-all group">
-                <div class="text-3xl mb-4 group-hover:scale-110 transition-transform">⚖️</div>
+                <div class="text-3xl mb-4">⚖️</div>
                 <h3 class="text-xl font-bold mb-2 uppercase italic">7 Principles</h3>
-                <p class="text-slate-500 text-sm">The foundation rules. Learn about Business Justification and Manage by Exception.</p>
+                <p class="text-slate-500 text-sm">Universal rules that apply to every PRINCE2 project.</p>
             </a>
 
-            <a href="roles.html" class="glass p-8 rounded-[2rem] border border-blue-500/20 hover:scale-[1.02] transition-all group bg-blue-500/5">
-                <div class="text-3xl mb-4 group-hover:scale-110 transition-transform">👤</div>
+            <a href="roles.html" class="glass p-8 rounded-[2rem] border border-white/5 hover:scale-[1.02] transition-all group">
+                <div class="text-3xl mb-4">👤</div>
                 <h3 class="text-xl font-bold mb-2 uppercase italic">Roles & Org</h3>
-                <p class="text-slate-400 text-sm">Who is Accountable vs Responsible? Master the Project Board and PM duties.</p>
+                <p class="text-slate-500 text-sm">Accountability vs Responsibility and Board structures.</p>
             </a>
 
             <a href="practices.html" class="glass p-8 rounded-[2rem] border border-white/5 hover:scale-[1.02] transition-all group">
-                <div class="text-3xl mb-4 group-hover:scale-110 transition-transform">🛠️</div>
+                <div class="text-3xl mb-4">🛠️</div>
                 <h3 class="text-xl font-bold mb-2 uppercase italic">7 Practices</h3>
-                <p class="text-slate-500 text-sm">Knowledge areas including Business Case, Risk, Quality, and Progress.</p>
+                <p class="text-slate-500 text-sm">Detailed management areas and Sustainability targets.</p>
             </a>
 
-            <a href="processes.html" class="glass p-8 rounded-[2rem] border border-white/5 hover:scale-[1.02] transition-all group">
-                <div class="text-3xl mb-4 group-hover:scale-110 transition-transform">🔄</div>
-                <h3 class="text-xl font-bold mb-2 uppercase italic">7 Processes</h3>
-                <p class="text-slate-400 text-sm">The roadmap of the project lifecycle from Starting Up (SU) to Closing (CP).</p>
+            <a href="processes.html" class="glass p-8 rounded-[2rem] border border-blue-500/30 bg-blue-500/5 hover:scale-[1.02] transition-all group">
+                <div class="text-3xl mb-4">🔄</div>
+                <h3 class="text-xl font-bold mb-2 uppercase italic text-blue-400">7 Processes</h3>
+                <p class="text-slate-300 text-sm">From Starting Up to Closing. The step-by-step flow.</p>
             </a>
 
             <a href="documents.html" class="glass p-8 rounded-[2rem] border border-white/5 hover:scale-[1.02] transition-all group">
-                <div class="text-3xl mb-4 group-hover:scale-110 transition-transform">📄</div>
+                <div class="text-3xl mb-4">📄</div>
                 <h3 class="text-xl font-bold mb-2 uppercase italic">Documents</h3>
-                <p class="text-slate-400 text-sm">Every management product from the PID to Checkpoint Reports.</p>
+                <p class="text-slate-500 text-sm">Baselines, Records, and Reports (Management Products).</p>
             </a>
 
             <a href="glossary.html" class="glass p-8 rounded-[2rem] border border-white/5 hover:scale-[1.02] transition-all group">
-                <div class="text-3xl mb-4 group-hover:scale-110 transition-transform">📖</div>
+                <div class="text-3xl mb-4">📖</div>
                 <h3 class="text-xl font-bold mb-2 uppercase italic">Glossary</h3>
-                <p class="text-slate-400 text-sm">Real-time search for official PRINCE2 terminology and definitions.</p>
+                <p class="text-slate-500 text-sm">Searchable terms and official V7 definitions.</p>
             </a>
         </div>
         
     </main>
 
     <footer class="p-12 text-center text-slate-600 text-[10px] tracking-widest uppercase border-t border-white/5">
-        PRINCE2® is a registered trademark of AXELOS Limited. This is a study tool.
+        PRINCE2 7 Encyclopedia • Focus on Sustainability & People
     </footer>
 
 </body>
