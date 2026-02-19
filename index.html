@@ -2,283 +2,127 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>PRINCE2 7 | The Complete Encyclopedia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRINCE2 7 | Master Encyclopedia</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #3b82f6;
-            --bg: #030712;
-            --card-bg: rgba(17, 24, 39, 0.8);
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg);
-            color: #f9fafb;
-            overflow-x: hidden;
-        }
-
-        .glass {
-            background: var(--card-bg);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .nav-active {
-            color: #60a5fa !important;
-            border-bottom: 2px solid #3b82f6;
-        }
-
-        .scroll-hide::-webkit-scrollbar { display: none; }
-
-        @keyframes slideUp {
-            from { transform: translateY(100%); }
-            to { transform: translateY(0); }
-        }
-
-        .panel-open {
-            animation: slideUp 0.4s cubic-bezier(0, 0, 0.2, 1) forwards;
-        }
-        
-        .badge {
-            font-size: 0.65rem;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-weight: 800;
-            text-transform: uppercase;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="pb-20 md:pb-0">
+<body class="bg-[#030712] text-white">
 
-    <!-- Progress Bar -->
-    <div id="progress" class="fixed top-0 left-0 h-1 bg-blue-600 z-[110] transition-all duration-300" style="width: 0%"></div>
-
-    <!-- Header -->
-    <header class="p-6 md:p-12 max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-        <div>
-            <div class="flex items-center gap-2 mb-2">
-                <span class="bg-blue-600 text-[10px] px-2 py-0.5 rounded font-black">V7 OFFICIAL</span>
-                <span class="text-slate-500 text-[10px] font-bold tracking-widest uppercase">Methodology Explorer</span>
-            </div>
-            <h1 class="text-4xl md:text-6xl font-black tracking-tighter italic">PRINCE2 <span class="text-blue-500">MASTER</span></h1>
+    <header class="p-6 md:p-20 max-w-7xl mx-auto text-center md:text-left">
+        <div class="inline-flex items-center gap-2 mb-6 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20">
+            <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
+            <span class="text-blue-400 text-[10px] font-bold tracking-[0.2em] uppercase">V7 Official Standard</span>
         </div>
-        <div class="flex gap-3">
-            <div class="text-right hidden md:block">
-                <p class="text-xs font-bold text-slate-500">LAST UPDATED</p>
-                <p class="text-sm font-mono">FEB 2024</p>
-            </div>
-        </div>
+        <h1 class="text-6xl md:text-8xl font-black tracking-tighter italic uppercase leading-[0.9]">
+            PRINCE2 <span class="text-blue-500">Master</span>
+        </h1>
+        <p class="mt-8 text-slate-400 max-w-2xl text-lg md:text-xl font-light leading-relaxed">
+            The ultimate digital guide to mastering the world's most practiced project management methodology. 
+            Designed for <span class="text-white font-semibold underline decoration-blue-500">Foundation Candidates</span>.
+        </p>
     </header>
 
-    <!-- Main Navigation (Desktop) -->
-    <nav class="sticky top-0 z-40 glass mb-8 hidden md:block">
-        <div class="max-w-7xl mx-auto px-6 flex gap-8">
-            <button onclick="changeView('principles')" id="d-principles" class="py-4 text-sm font-bold uppercase tracking-widest opacity-50 hover:opacity-100 transition-all">Principles</button>
-            <button onclick="changeView('people')" id="d-people" class="py-4 text-sm font-bold uppercase tracking-widest opacity-50 hover:opacity-100 transition-all">People</button>
-            <button onclick="changeView('practices')" id="d-practices" class="py-4 text-sm font-bold uppercase tracking-widest opacity-50 hover:opacity-100 transition-all">Practices</button>
-            <button onclick="changeView('processes')" id="d-processes" class="py-4 text-sm font-bold uppercase tracking-widest opacity-50 hover:opacity-100 transition-all">Processes</button>
+    <nav class="sticky top-0 z-40 glass border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-6 flex overflow-x-auto scroll-hide no-scrollbar">
+            <a href="index.html" class="py-5 px-6 text-xs font-bold uppercase tracking-widest nav-active whitespace-nowrap">Overview</a>
+            <a href="principles.html" class="py-5 px-6 text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 transition-all whitespace-nowrap">Principles</a>
+            <a href="practices.html" class="py-5 px-6 text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 transition-all whitespace-nowrap">Practices</a>
+            <a href="processes.html" class="py-5 px-6 text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 transition-all whitespace-nowrap">Processes</a>
+            <a href="documents.html" class="py-5 px-6 text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 transition-all whitespace-nowrap">Documents</a>
+            <a href="glossary.html" class="py-5 px-6 text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 transition-all whitespace-nowrap">Glossary</a>
         </div>
     </nav>
 
-    <!-- Grid Layout -->
-    <main class="max-w-7xl mx-auto px-6 pb-24">
-        <div class="mb-10">
-            <h2 id="view-title" class="text-3xl font-bold font-display mb-2">...</h2>
-            <p id="view-desc" class="text-slate-400 max-w-2xl">...</p>
-        </div>
+    <main class="max-w-7xl mx-auto px-6 py-16">
 
-        <div id="grid-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <!-- Cards injected here -->
+        <section class="mb-32">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold mb-6 italic tracking-tight uppercase">The Framework Structure</h2>
+                    <p class="text-slate-400 mb-8">PRINCE2 7 consists of four integrated elements that surround the project context. To pass the exam, you must understand how they interact.</p>
+                    
+                    <div class="space-y-4">
+                        <div class="p-4 rounded-2xl bg-white/5 border border-white/5 hover:border-blue-500/30 transition-all">
+                            <h4 class="font-bold text-blue-400 uppercase text-xs mb-1">1. Principles</h4>
+                            <p class="text-sm text-slate-300">The 7 universal 'must-follow' rules for a project to be PRINCE2.</p>
+                        </div>
+                        <div class="p-4 rounded-2xl bg-white/5 border border-white/5 hover:border-blue-500/30 transition-all">
+                            <h4 class="font-bold text-blue-400 uppercase text-xs mb-1">2. People</h4>
+                            <p class="text-sm text-slate-300">The core element (New in V7) focusing on culture and leadership.</p>
+                        </div>
+                        <div class="p-4 rounded-2xl bg-white/5 border border-white/5 hover:border-blue-500/30 transition-all">
+                            <h4 class="font-bold text-blue-400 uppercase text-xs mb-1">3. Practices</h4>
+                            <p class="text-sm text-slate-300">7 essential management areas used throughout the project.</p>
+                        </div>
+                        <div class="p-4 rounded-2xl bg-white/5 border border-white/5 hover:border-blue-500/30 transition-all">
+                            <h4 class="font-bold text-blue-400 uppercase text-xs mb-1">4. Processes</h4>
+                            <p class="text-sm text-slate-300">The step-by-step lifecycle from pre-project to closing.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative flex justify-center">
+                    <div class="w-full max-w-md aspect-square rounded-full border border-blue-500/20 glass flex items-center justify-center relative">
+                        <div class="absolute inset-0 bg-blue-600/5 blur-3xl rounded-full"></div>
+                        <div class="text-center z-10">
+                            <p class="text-[10px] font-bold tracking-[0.4em] text-blue-500 uppercase mb-2">Integrated</p>
+                            <p class="text-4xl font-black italic">ELEMENTS</p>
+                        </div>
+                        <div class="absolute top-10 left-10 w-3 h-3 bg-blue-500 rounded-full"></div>
+                        <div class="absolute bottom-20 right-5 w-2 h-2 bg-purple-500 rounded-full"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+
+        <h2 class="text-2xl font-bold mb-8 uppercase italic">Quick Access Explorer</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <a href="principles.html" class="glass p-8 rounded-[2rem] border border-white/5 hover:scale-[1.02] transition-all group">
+                <div class="text-3xl mb-4 group-hover:scale-110 transition-transform">⚖️</div>
+                <h3 class="text-xl font-bold mb-2">7 Principles</h3>
+                <p class="text-slate-500 text-sm">The foundation rules. Learn about Business Justification, Manage by Stages, and more.</p>
+            </a>
+
+            <a href="practices.html" class="glass p-8 rounded-[2rem] border border-white/5 hover:scale-[1.02] transition-all group">
+                <div class="text-3xl mb-4 group-hover:scale-110 transition-transform">🛠️</div>
+                <h3 class="text-xl font-bold mb-2">7 Practices</h3>
+                <p class="text-slate-500 text-sm">Detailed knowledge areas including Business Case, Risk, and Quality management.</p>
+            </a>
+
+            <a href="processes.html" class="glass p-8 rounded-[2rem] border border-white/5 hover:scale-[1.02] transition-all group">
+                <div class="text-3xl mb-4 group-hover:scale-110 transition-transform">🔄</div>
+                <h3 class="text-xl font-bold mb-2">7 Processes</h3>
+                <p class="text-slate-400 text-sm">The roadmap of the project lifecycle from SU (Starting Up) to CP (Closing).</p>
+            </a>
+
+            <a href="documents.html" class="glass p-8 rounded-[2rem] border border-white/5 hover:scale-[1.02] transition-all group">
+                <div class="text-3xl mb-4 group-hover:scale-110 transition-transform">📄</div>
+                <h3 class="text-xl font-bold mb-2">Management Products</h3>
+                <p class="text-slate-400 text-sm">Every document you need to know for the exam, from PID to Checkpoint Reports.</p>
+            </a>
+
+            <a href="glossary.html" class="glass p-8 rounded-[2rem] border border-white/5 hover:scale-[1.02] transition-all group">
+                <div class="text-3xl mb-4 group-hover:scale-110 transition-transform">📖</div>
+                <h3 class="text-xl font-bold mb-2">Glossary</h3>
+                <p class="text-slate-400 text-sm">Search and learn official PRINCE2 terminology and definitions.</p>
+            </a>
+
+            <div class="glass p-8 rounded-[2rem] border-dashed border-2 border-white/10 flex flex-col items-center justify-center text-center opacity-60">
+                <p class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-2">Coming Soon</p>
+                <h3 class="text-lg font-bold">Exam Simulator</h3>
+            </div>
+            
         </div>
     </main>
 
-    <!-- Mobile Nav -->
-    <div class="fixed bottom-0 left-0 right-0 glass z-50 md:hidden flex justify-around p-4 border-t border-white/5">
-        <button onclick="changeView('principles')" id="m-principles" class="flex flex-col items-center gap-1 opacity-40"><span class="text-lg">⚖️</span><span class="text-[9px] font-bold uppercase">Principles</span></button>
-        <button onclick="changeView('people')" id="m-people" class="flex flex-col items-center gap-1 opacity-40"><span class="text-lg">🤝</span><span class="text-[9px] font-bold uppercase">People</span></button>
-        <button onclick="changeView('practices')" id="m-practices" class="flex flex-col items-center gap-1 opacity-40"><span class="text-lg">🛠️</span><span class="text-[9px] font-bold uppercase">Practices</span></button>
-        <button onclick="changeView('processes')" id="m-processes" class="flex flex-col items-center gap-1 opacity-40"><span class="text-lg">🔄</span><span class="text-[9px] font-bold uppercase">Processes</span></button>
-    </div>
+    <footer class="p-12 text-center text-slate-600 text-[10px] tracking-widest uppercase border-t border-white/5">
+        PRINCE2® is a registered trademark of AXELOS Limited. This is a study tool.
+    </footer>
 
-    <!-- Slide-up Detail Panel -->
-    <div id="detail-panel" class="fixed inset-0 z-[100] bg-gray-950 transform translate-y-full transition-transform duration-500 overflow-y-auto hidden">
-        <div class="min-h-screen p-6 md:p-16 max-w-4xl mx-auto">
-            <div class="flex justify-between items-center mb-12">
-                <button onclick="closeDetails()" class="bg-white/5 p-3 rounded-full hover:bg-white/10 transition-colors">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-width="2.5"/></svg>
-                </button>
-                <div id="detail-category" class="badge bg-blue-500/20 text-blue-400">CATEGORY</div>
-            </div>
-
-            <div id="detail-content">
-                <!-- Content injected here -->
-            </div>
-        </div>
-    </div>
-
-    <script>
-        const store = {
-            principles: {
-                title: "7 Core Principles",
-                desc: "Universal truths that define if a project is truly following PRINCE2.",
-                items: [
-                    { name: "Continued Business Justification", summary: "The reason for starting the project must remain valid.", detail: "If the Business Case is no longer viable (e.g. market change), the project must be stopped. It prevents 'zombie projects' that consume resources with no return.", takeaways: ["Documented in Business Case", "Review at every Stage Boundary", "Linked to Benefits"] },
-                    { name: "Learn from Experience", summary: "Using past data to improve future performance.", detail: "Project teams are required to seek lessons from previous projects, record them during the current one, and pass them to the PMO.", takeaways: ["Lessons Log", "Lessons Report", "External Lessons Search"] },
-                    { name: "Defined Roles & Responsibilities", summary: "Clarifying accountability and authority.", detail: "Projects involve people. PRINCE2 defines the Project Management Team structure to ensure Business, User, and Supplier interests are represented.", takeaways: ["3 Project Interests", "Executive Accountability", "Senior User/Supplier Roles"] },
-                    { name: "Manage by Stages", summary: "Planning and controlling in chunks.", detail: "PRINCE2 mandates at least two stages: Initiation and one Delivery stage. It ensures the Board provides 'go/no-go' decisions at logical points.", takeaways: ["Management Stages", "Technical Stages", "Stage Boundaries"] },
-                    { name: "Manage by Exception", summary: "Efficiency in management via tolerances.", detail: "Delegation of authority by setting tolerances for Time, Cost, Quality, Scope, Benefit, and Risk. PM only contacts Board if tolerances are breached.", takeaways: ["6 Project Tolerances", "Escalation paths", "Management Efficiency"] },
-                    { name: "Focus on Products", summary: "Output-oriented planning.", detail: "Don't focus on activities (tasks) first. Focus on the 'Product' (deliverable) and its quality requirements.", takeaways: ["Product Descriptions", "Product Breakdown Structure", "Quality Criteria"] },
-                    { name: "Tailor to Suit Project", summary: "Framework flexibility.", detail: "The methodology must be adapted to the project's size, complexity, and risk environment. 'One size does not fit all.'", takeaways: ["Tailoring vs Embedding", "Complexity assessment", "Process simplification"] }
-                ]
-            },
-            people: {
-                title: "People (New in V7)",
-                desc: "Focusing on the human ecosystem, culture, and leadership within the project.",
-                items: [
-                    { name: "Leadership", summary: "Inspiring and motivating the team.", detail: "V7 shifts from 'Management' to 'Leadership'. Effective PMs must adapt their style to the team's maturity and the project context.", takeaways: ["Soft Skills", "Team Dynamics", "Motivation Techniques"] },
-                    { name: "Culture", summary: "The shared values of the project team.", detail: "Establishing a culture of transparency, collaboration, and continuous improvement. Includes psychological safety to report risks.", takeaways: ["Organizational Culture", "Project Values", "Collaborative Working"] },
-                    { name: "Capability", summary: "Having the right skills in place.", detail: "Assessing the skills gap within the project team and ensuring training or recruitment supports the project objectives.", takeaways: ["Skills Matrices", "Training Plans", "Competency Frameworks"] },
-                    { name: "Communication", summary: "Effective information exchange.", detail: "Focusing on the 'why' and 'how' of communication to ensure stakeholders are not just informed, but engaged.", takeaways: ["Stakeholder Engagement", "Communication Approach", "Feedback Loops"] }
-                ]
-            },
-            practices: {
-                title: "7 Practices",
-                desc: "Aspects of project management that must be addressed continually.",
-                items: [
-                    { name: "Business Case", summary: "Value for money and desirability.", detail: "The 'Why'. It justifies the investment. V7 adds specific focus on Sustainability and Digital Assets.", takeaways: ["Benefits Management", "Sustainability Targets", "Investment Appraisal"] },
-                    { name: "Organization", summary: "Structure of the project team.", detail: "Defines the 4 layers of management: Corporate, Directing (Board), Managing (PM), and Delivering (Team).", takeaways: ["Project Board", "Project Assurance", "Project Support"] },
-                    { name: "Plans", summary: "The 'How', 'How Much', and 'When'.", detail: "Three levels: Project Plan (Top), Stage Plan (Detailed), and Team Plan (Granular).", takeaways: ["Planning Horizon", "Product-based planning", "Gantt/Agile roadmaps"] },
-                    { name: "Quality", summary: "Fitness for purpose and standards.", detail: "Ensuring products meet the user's expectations. Includes Quality Assurance and Quality Control.", takeaways: ["Quality Register", "Acceptance Criteria", "Quality Review"] },
-                    { name: "Risk", summary: "Managing uncertainty.", detail: "Identifying threats and opportunities. In V7, risk management includes environmental and societal risks.", takeaways: ["Risk Management Approach", "Risk Register", "Proximity/Probability"] },
-                    { name: "Issues", summary: "Managing change and problems.", detail: "Handling requests for change, off-specifications, and problems that have already occurred.", takeaways: ["Issue Register", "Change Authority", "Configuration Management"] },
-                    { name: "Progress", summary: "Monitoring and controlling.", detail: "Measuring actuals against plans. Using 'Time-driven' and 'Event-driven' reports to stay on track.", takeaways: ["Checkpoint Reports", "Highlight Reports", "End Stage Reports"] }
-                ]
-            },
-            processes: {
-                title: "7 Processes",
-                desc: "The chronological flow of the project from start to finish.",
-                items: [
-                    { name: "Starting Up (SU)", summary: "Pre-project verification.", detail: "Occurs before the project officially begins. Appoints the Executive and PM, and creates the Project Brief.", input: "Project Mandate", output: "Project Brief", takeaways: ["Lessons Log created", "Outline Business Case", "Project Approach"] },
-                    { name: "Directing (DP)", summary: "The Board's oversight.", detail: "Starts after SU. The Board makes the major decisions. It doesn't 'do' the work, it 'directs' the PM.", input: "Requests for Auth", output: "Decisions/Guidance", takeaways: ["Authorize Initiation", "Authorize Stages", "Ad-hoc direction"] },
-                    { name: "Initiating (IP)", summary: "Setting the foundation.", detail: "Establishing solid management foundations. The output is the PID (Project Initiation Documentation).", input: "Request to Initiate", output: "PID", takeaways: ["Project Plan", "Strategies/Approaches", "Final Business Case"] },
-                    { name: "Controlling a Stage (CS)", summary: "The PM's day-to-day work.", detail: "Managing the delivery of work packages, handling issues, and keeping the Board informed via Highlight Reports.", input: "Stage Plan", output: "Work Packages", takeaways: ["Reviewing Progress", "Capturing Issues", "Escalating Exceptions"] },
-                    { name: "Managing Product Delivery (MPD)", summary: "The Team Manager's realm.", detail: "Accepting work packages, executing the work, and handing back completed products to the PM.", input: "Work Package", output: "Completed Products", takeaways: ["Checkpoint Reports", "Quality Checks", "Approval/Acceptance"] },
-                    { name: "Managing a Stage Boundary (SB)", summary: "Preparing for the next stage.", detail: "PM reports on the current stage performance and creates the plan for the next stage for Board approval.", input: "Actuals", output: "Next Stage Plan", takeaways: ["End Stage Report", "Updated Project Plan", "Next Stage Plan"] },
-                    { name: "Closing (CP)", summary: "Fixed-term finish.", detail: "Ensuring the products are handed over to the business and the project is decommissioned correctly.", input: "Closing Request", output: "End Project Report", takeaways: ["Benefits Review Plan", "Lessons Report", "Post-Project advice"] }
-                ]
-            }
-        };
-
-        let currentView = 'principles';
-
-        function changeView(view) {
-            currentView = view;
-            
-            // UI Updates
-            document.querySelectorAll('nav button, .fixed button').forEach(b => {
-                b.classList.remove('nav-active');
-                b.classList.remove('opacity-100');
-                b.classList.add('opacity-40');
-            });
-            document.getElementById(`d-${view}`).classList.add('nav-active', 'opacity-100');
-            document.getElementById(`m-${view}`).classList.add('nav-active', 'opacity-100');
-
-            document.getElementById('view-title').innerText = store[view].title;
-            document.getElementById('view-desc').innerText = store[view].desc;
-
-            const grid = document.getElementById('grid-container');
-            grid.innerHTML = '';
-
-            store[view].items.forEach((item, index) => {
-                const card = document.createElement('div');
-                card.className = "glass p-6 rounded-2xl cursor-pointer hover:border-blue-500/50 transition-all group";
-                card.onclick = () => openDetails(item, view);
-                card.innerHTML = `
-                    <div class="flex justify-between items-start mb-4">
-                        <div class="w-10 h-10 rounded-xl bg-blue-600/10 flex items-center justify-center text-blue-500 font-black group-hover:scale-110 transition-transform">
-                            ${index + 1}
-                        </div>
-                        <div class="opacity-20 group-hover:opacity-100 transition-opacity">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-width="3"/></svg>
-                        </div>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2 font-display">${item.name}</h3>
-                    <p class="text-slate-400 text-sm line-clamp-3">${item.summary}</p>
-                `;
-                grid.appendChild(card);
-            });
-
-            // Smooth progress indicator
-            const views = ['principles', 'people', 'practices', 'processes'];
-            const progress = ((views.indexOf(view) + 1) / 4) * 100;
-            document.getElementById('progress').style.width = `${progress}%`;
-        }
-
-        function openDetails(item, category) {
-            const panel = document.getElementById('detail-panel');
-            const content = document.getElementById('detail-content');
-            const badge = document.getElementById('detail-category');
-
-            badge.innerText = category;
-            
-            content.innerHTML = `
-                <h2 class="text-4xl md:text-6xl font-black mb-8 leading-tight tracking-tighter italic">${item.name}</h2>
-                <p class="text-xl md:text-2xl text-slate-300 font-light mb-12 leading-relaxed border-l-4 border-blue-600 pl-6">${item.detail}</p>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                    <div>
-                        <h4 class="text-xs font-bold text-blue-500 uppercase tracking-widest mb-6">Core Components</h4>
-                        <ul class="space-y-4">
-                            ${item.takeaways.map(t => `
-                                <li class="flex items-center gap-4 text-slate-400">
-                                    <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
-                                    ${t}
-                                </li>
-                            `).join('')}
-                        </ul>
-                    </div>
-                    
-                    ${item.input ? `
-                    <div class="space-y-6">
-                        <div class="bg-white/5 p-6 rounded-2xl border border-white/5">
-                            <h4 class="text-[10px] font-bold text-slate-500 uppercase mb-2">Primary Input</h4>
-                            <p class="font-bold text-blue-400">${item.input}</p>
-                        </div>
-                        <div class="bg-white/5 p-6 rounded-2xl border border-white/5">
-                            <h4 class="text-[10px] font-bold text-slate-500 uppercase mb-2">Primary Output</h4>
-                            <p class="font-bold text-green-400">${item.output}</p>
-                        </div>
-                    </div>
-                    ` : `
-                    <div class="bg-blue-600/5 p-8 rounded-3xl border border-blue-500/10">
-                        <h4 class="text-xs font-bold text-blue-500 uppercase mb-4">Methodology Context</h4>
-                        <p class="text-sm text-slate-400 leading-relaxed">
-                            This ${category.slice(0, -1)} is mandatory for every project. Failure to address this leads to "PINO" (PRINCE2 In Name Only). Tailoring is allowed, but the core objective of the ${category.slice(0, -1)} must be met.
-                        </p>
-                    </div>
-                    `}
-                </div>
-            `;
-
-            panel.classList.remove('hidden');
-            setTimeout(() => panel.classList.add('panel-open'), 10);
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeDetails() {
-            const panel = document.getElementById('detail-panel');
-            panel.classList.remove('panel-open');
-            setTimeout(() => {
-                panel.classList.add('hidden');
-                document.body.style.overflow = 'auto';
-            }, 500);
-        }
-
-        window.onload = () => changeView('principles');
-    </script>
 </body>
 </html>
