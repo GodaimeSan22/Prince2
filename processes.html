@@ -6,161 +6,231 @@
     <title>7 Processes | PRINCE2 Master</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
     <style>
-        .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(12px); }
-        .nav-active { border-bottom: 2px solid #3b82f6; opacity: 1 !important; }
+        :root { --glass: rgba(255, 255, 255, 0.03); --glass-border: rgba(255, 255, 255, 0.08); }
+        body { font-family: 'Inter', sans-serif; background-color: #030712; color: white; scroll-behavior: smooth; }
+        h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; }
+        .glass { background: var(--glass); backdrop-filter: blur(12px); border: 1px solid var(--glass-border); }
+        .nav-active { border-bottom: 2px solid #3b82f6; color: white !important; opacity: 1 !important; }
         .no-scrollbar::-webkit-scrollbar { display: none; }
-        .detail-badge { @apply text-[9px] font-bold px-2 py-0.5 rounded bg-white/5 text-slate-400 uppercase tracking-tighter; }
+        .detail-badge { font-size: 9px; font-weight: 800; padding: 2px 8px; border-radius: 4px; background: rgba(255,255,255,0.05); color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em; }
+        
+        /* Animation for the Board Oversight pulse */
+        @keyframes pulse-soft {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        .animate-pulse-soft { animation: pulse-soft 3s infinite; }
     </style>
 </head>
-<body class="bg-[#030712] text-white">
+<body class="selection:bg-blue-500/30">
 
     <header class="p-6 md:p-12 max-w-7xl mx-auto">
         <div class="flex items-center gap-2 mb-4">
-            <span class="bg-blue-600 px-2 py-0.5 rounded text-[10px] font-bold tracking-tighter text-white uppercase">LIFECYCLE</span>
+            <span class="bg-blue-600 px-2 py-0.5 rounded text-[10px] font-bold tracking-tighter text-white uppercase shadow-[0_0_15px_rgba(37,99,235,0.3)]">LIFECYCLE</span>
             <span class="text-slate-500 text-[10px] font-bold tracking-widest uppercase">The Chronological Flow</span>
         </div>
-        <h1 class="text-5xl font-black italic uppercase">The 7 <span class="text-blue-500">Processes</span></h1>
-        <p class="text-slate-400 mt-4 max-w-2xl">Processes describe a step-by-step progression from pre-project start to final closure. They define "What to do, When, and by Whom."</p>
+        <h1 class="text-5xl font-black italic uppercase tracking-tighter">The 7 <span class="text-blue-500">Processes</span></h1>
+        <p class="text-slate-400 mt-4 max-w-2xl leading-relaxed">
+            Processes describe a step-by-step progression from pre-project start to final closure. They define <span class="text-white font-semibold italic">"What to do, When, and by Whom."</span>
+        </p>
     </header>
 
-    <nav class="sticky top-0 z-40 glass border-y border-white/5">
+    <nav class="sticky top-0 z-40 glass border-y border-white/5 bg-[#030712]/80">
         <div class="max-w-7xl mx-auto px-6 flex overflow-x-auto no-scrollbar">
-            <a href="index.html" class="py-5 px-6 text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 whitespace-nowrap">Overview</a>
-            <a href="principles.html" class="py-5 px-6 text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 whitespace-nowrap">Principles</a>
-            <a href="practices.html" class="py-5 px-6 text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 whitespace-nowrap">Practices</a>
-            <a href="roles.html" class="py-5 px-6 text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 whitespace-nowrap">Roles</a>
+            <a href="index.html" class="py-5 px-6 text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 transition-all whitespace-nowrap">Overview</a>
+            <a href="principles.html" class="py-5 px-6 text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 transition-all whitespace-nowrap">Principles</a>
+            <a href="practices.html" class="py-5 px-6 text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 transition-all whitespace-nowrap">Practices</a>
+            <a href="roles.html" class="py-5 px-6 text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 transition-all whitespace-nowrap">Roles</a>
             <a href="processes.html" class="py-5 px-6 text-xs font-bold uppercase tracking-widest nav-active whitespace-nowrap">Processes</a>
-            <a href="documents.html" class="py-5 px-6 text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 whitespace-nowrap">Documents</a>
-            <a href="glossary.html" class="py-5 px-6 text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 whitespace-nowrap">Glossary</a>
+            <a href="exam.html" class="py-5 px-6 text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 transition-all whitespace-nowrap text-blue-400">Exam Sim</a>
+            <a href="glossary.html" class="py-5 px-6 text-xs font-bold uppercase tracking-widest opacity-50 hover:opacity-100 transition-all whitespace-nowrap">Glossary</a>
         </div>
     </nav>
 
-    <main class="max-w-7xl mx-auto px-6 py-12">
+    <main class="max-w-7xl mx-auto px-6 py-16">
         
-        <div class="mb-16 text-center">
-            <h3 class="text-xs font-bold text-slate-500 uppercase tracking-[0.3em] mb-8">Process Model Overview</h3>
-            <div class="bg-white/5 p-12 rounded-[3rem] border border-white/5 italic text-slate-500 text-sm">
-                [Visual Diagram: SU → IP → Cycle (CS & MP) → SB → CP | Overseen by DP]
+        <div class="mb-24">
+            <h3 class="text-xs font-bold text-slate-500 uppercase tracking-[0.3em] mb-12 text-center">Interactive Process Model</h3>
+            
+            <div class="relative max-w-5xl mx-auto px-4 py-16 glass rounded-[3rem] border border-white/10 overflow-hidden shadow-2xl shadow-blue-900/10">
+                
+                <div class="absolute top-6 left-1/2 -translate-x-1/2 w-3/4 h-12 border-x border-t border-blue-500/30 rounded-t-2xl flex justify-center">
+                    <div class="bg-[#030712] px-6 -mt-3 text-blue-400 font-black text-[10px] tracking-[0.3em] uppercase flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse-soft shadow-[0_0_8px_rgba(59,130,246,0.8)]"></span>
+                        Directing (DP) - Project Board Oversight
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row items-center justify-between gap-4 relative z-10">
+                    
+                    <a href="#su" class="flex flex-col items-center group transition-all">
+                        <div class="w-16 h-16 rounded-2xl bg-blue-600 flex items-center justify-center font-black text-xl shadow-[0_0_20px_rgba(37,99,235,0.4)] group-hover:scale-110 group-hover:shadow-blue-500/50 transition-all">SU</div>
+                        <span class="text-[9px] mt-3 font-bold text-slate-500 tracking-tighter uppercase group-hover:text-blue-400">Starting Up</span>
+                    </a>
+
+                    <div class="hidden md:block text-slate-800 font-bold">──▶</div>
+
+                    <a href="#ip" class="flex flex-col items-center group transition-all">
+                        <div class="w-16 h-16 rounded-2xl border border-purple-500/50 bg-purple-500/10 flex items-center justify-center font-black text-xl text-purple-400 group-hover:bg-purple-600 group-hover:text-white group-hover:scale-110 transition-all">IP</div>
+                        <span class="text-[9px] mt-3 font-bold text-slate-500 tracking-tighter uppercase group-hover:text-purple-400">Initiating</span>
+                    </a>
+
+                    <div class="hidden md:block text-slate-800 font-bold">──▶</div>
+
+                    <div class="relative p-6 border-2 border-dashed border-white/10 rounded-[2rem] bg-white/[0.02] flex flex-col md:flex-row gap-6 items-center shadow-inner">
+                        <div class="absolute -top-3 left-6 bg-[#030712] px-3 text-[8px] font-black text-green-500 uppercase tracking-widest">The Delivery Cycle</div>
+                        
+                        <a href="#cs" class="flex flex-col items-center group">
+                            <div class="w-14 h-14 rounded-xl border border-green-500/50 flex items-center justify-center font-bold text-lg text-green-500 group-hover:bg-green-500 group-hover:text-black transition-all">CS</div>
+                            <span class="text-[8px] mt-2 font-bold text-slate-500 uppercase">Control</span>
+                        </a>
+                        
+                        <div class="text-slate-700 rotate-90 md:rotate-0 font-black">◀═▶</div>
+
+                        <a href="#mp" class="flex flex-col items-center group">
+                            <div class="w-14 h-14 rounded-xl border border-yellow-500/50 flex items-center justify-center font-bold text-lg text-yellow-500 group-hover:bg-yellow-500 group-hover:text-black transition-all">MP</div>
+                            <span class="text-[8px] mt-2 font-bold text-slate-500 uppercase">Product</span>
+                        </a>
+
+                        <div class="hidden md:block absolute -right-4 top-1/2 -translate-y-1/2 text-orange-500/50 text-xl font-bold animate-pulse">↻</div>
+                    </div>
+
+                    <div class="hidden md:block text-slate-800 font-bold">──▶</div>
+
+                    <a href="#sb" class="flex flex-col items-center group transition-all">
+                        <div class="w-16 h-16 rounded-2xl border border-orange-500/50 bg-orange-500/10 flex items-center justify-center font-black text-xl text-orange-400 group-hover:bg-orange-500 group-hover:text-white group-hover:scale-110 transition-all">SB</div>
+                        <span class="text-[9px] mt-3 font-bold text-slate-500 tracking-tighter uppercase group-hover:text-orange-400">Boundary</span>
+                    </a>
+
+                    <div class="hidden md:block text-slate-800 font-bold">──▶</div>
+
+                    <a href="#cp" class="flex flex-col items-center group transition-all">
+                        <div class="w-16 h-16 rounded-2xl bg-red-600/20 border border-red-600 flex items-center justify-center font-black text-xl text-red-500 group-hover:bg-red-600 group-hover:text-white group-hover:scale-110 transition-all shadow-[0_0_20px_rgba(220,38,38,0.2)]">CP</div>
+                        <span class="text-[9px] mt-3 font-bold text-slate-500 tracking-tighter uppercase group-hover:text-red-400">Closing</span>
+                    </a>
+                </div>
+
+                <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-blue-600/10 blur-[80px] rounded-full"></div>
+                <div class="absolute -top-10 -right-10 w-40 h-40 bg-purple-600/10 blur-[80px] rounded-full"></div>
             </div>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             
-            <div class="glass p-8 rounded-[2.5rem] border border-white/5 relative">
+            <div id="su" class="glass p-8 rounded-[2.5rem] border border-white/5 transition-all hover:border-blue-500/20">
                 <div class="flex justify-between items-start mb-4">
                     <div class="text-blue-500 font-black text-4xl">SU</div>
                     <span class="detail-badge">Pre-Project</span>
                 </div>
-                <h2 class="text-xl font-bold uppercase mb-4 text-blue-400">Starting Up a Project</h2>
-                <div class="space-y-4 text-sm text-slate-400">
-                    <p>Purpose: To ensure that the prerequisites for Initiating a Project are in place. ("Do we have a viable project?")</p>
-                    <ul class="list-disc list-inside space-y-1">
+                <h2 class="text-xl font-bold uppercase mb-4 text-blue-400 italic">Starting Up a Project</h2>
+                <div class="space-y-4 text-sm text-slate-400 leading-relaxed">
+                    <p>Ensures that the prerequisites for Initiating a Project are in place. <span class="text-white font-medium">Is the project viable?</span></p>
+                    <ul class="list-disc list-inside space-y-2 marker:text-blue-500">
                         <li>Appoint Executive and Project Manager</li>
-                        <li>Create the <b class="text-white">Project Brief</b></li>
-                        <li>Plan the Initiation Stage</li>
+                        <li>Create the <b class="text-white">Project Brief</b> (The "Outline")</li>
+                        <li>Define the Project Product Description</li>
                     </ul>
                 </div>
             </div>
 
-            <div class="glass p-8 rounded-[2.5rem] border border-blue-500/20 bg-blue-500/5 relative">
+            <div id="dp" class="glass p-8 rounded-[2.5rem] border border-blue-500/20 bg-blue-500/5 transition-all">
                 <div class="flex justify-between items-start mb-4">
                     <div class="text-blue-400 font-black text-4xl">DP</div>
-                    <span class="detail-badge text-blue-400">Project Board</span>
+                    <span class="detail-badge text-blue-400 border border-blue-400/20">Project Board</span>
                 </div>
-                <h2 class="text-xl font-bold uppercase mb-4 text-blue-400">Directing a Project</h2>
-                <div class="space-y-4 text-sm text-slate-400">
-                    <p>The only process for the **Project Board**. It runs from startup until closure.</p>
-                    <ul class="list-disc list-inside space-y-1">
-                        <li>Authorize initiation and each delivery stage</li>
-                        <li>Make decisions on <b class="text-white">Exceptions</b></li>
+                <h2 class="text-xl font-bold uppercase mb-4 text-blue-400 italic">Directing a Project</h2>
+                <div class="space-y-4 text-sm text-slate-400 leading-relaxed">
+                    <p>The only process for the <b>Project Board</b>. It runs from startup until the final closure.</p>
+                    <ul class="list-disc list-inside space-y-2 marker:text-blue-400">
+                        <li>Authorize Initiation and Delivery Stages</li>
+                        <li>Manage by <b class="text-white">Exception</b> (Only act if tolerances are exceeded)</li>
                         <li>Provide ad-hoc direction and guidance</li>
                     </ul>
                 </div>
             </div>
 
-            <div class="glass p-8 rounded-[2.5rem] border border-white/5 relative">
+            <div id="ip" class="glass p-8 rounded-[2.5rem] border border-white/5 hover:border-purple-500/20 transition-all">
                 <div class="flex justify-between items-start mb-4">
                     <div class="text-purple-500 font-black text-4xl">IP</div>
                     <span class="detail-badge">Initiation Stage</span>
                 </div>
-                <h2 class="text-xl font-bold uppercase mb-4 text-purple-400">Initiating a Project</h2>
-                <div class="space-y-4 text-sm text-slate-400">
-                    <p>Building a solid foundation and detailed planning for the project.</p>
-                    <ul class="list-disc list-inside space-y-1">
+                <h2 class="text-xl font-bold uppercase mb-4 text-purple-400 italic">Initiating a Project</h2>
+                <div class="space-y-4 text-sm text-slate-400 leading-relaxed">
+                    <p>Establishes the firm foundations and detailed plans for the project.</p>
+                    <ul class="list-disc list-inside space-y-2 marker:text-purple-500">
                         <li>Assemble the <b class="text-white">PID</b> (Project Initiation Documentation)</li>
-                        <li>Refine the Business Case</li>
-                        <li>Setup Management Strategies (Risk, Quality, etc.)</li>
+                        <li>Setup Project Quality and Risk Approaches</li>
+                        <li>Refine the Business Case into its full version</li>
                     </ul>
                 </div>
             </div>
 
-            <div class="glass p-8 rounded-[2.5rem] border border-white/5 relative">
+            <div id="cs" class="glass p-8 rounded-[2.5rem] border border-white/5 hover:border-green-500/20 transition-all">
                 <div class="flex justify-between items-start mb-4">
                     <div class="text-green-500 font-black text-4xl">CS</div>
-                    <span class="detail-badge">Delivery Stages</span>
+                    <span class="detail-badge">Project Manager</span>
                 </div>
-                <h2 class="text-xl font-bold uppercase mb-4 text-green-400">Controlling a Stage</h2>
-                <div class="space-y-4 text-sm text-slate-400">
+                <h2 class="text-xl font-bold uppercase mb-4 text-green-400 italic">Controlling a Stage</h2>
+                <div class="space-y-4 text-sm text-slate-400 leading-relaxed">
                     <p>The Project Manager’s day-to-day management of a delivery stage.</p>
-                    <ul class="list-disc list-inside space-y-1">
-                        <li>Authorize <b class="text-white">Work Packages</b></li>
-                        <li>Review stage status (Checkpoint Reports)</li>
-                        <li>Manage Issues and Risks</li>
+                    <ul class="list-disc list-inside space-y-2 marker:text-green-500">
+                        <li>Authorize and monitor <b class="text-white">Work Packages</b></li>
+                        <li>Capture and analyze issues and risks</li>
+                        <li>Report progress via Checkpoint Reports</li>
                     </ul>
                 </div>
             </div>
 
-            <div class="glass p-8 rounded-[2.5rem] border border-white/5 relative">
+            <div id="mp" class="glass p-8 rounded-[2.5rem] border border-white/5 hover:border-yellow-500/20 transition-all">
                 <div class="flex justify-between items-start mb-4">
                     <div class="text-yellow-500 font-black text-4xl">MP</div>
                     <span class="detail-badge">Team Manager</span>
                 </div>
-                <h2 class="text-xl font-bold uppercase mb-4 text-yellow-400">Managing Product Delivery</h2>
-                <div class="space-y-4 text-sm text-slate-400">
-                    <p>The process of creating the project’s technical products.</p>
-                    <ul class="list-disc list-inside space-y-1">
+                <h2 class="text-xl font-bold uppercase mb-4 text-yellow-400 italic">Managing Product Delivery</h2>
+                <div class="space-y-4 text-sm text-slate-400 leading-relaxed">
+                    <p>The link between the Project Manager and the people building the products.</p>
+                    <ul class="list-disc list-inside space-y-2 marker:text-yellow-500">
                         <li>Accept and execute Work Packages</li>
-                        <li>Demonstrate quality (Quality Records)</li>
+                        <li>Carry out the quality checks</li>
                         <li>Hand over completed products to the PM</li>
                     </ul>
                 </div>
             </div>
 
-            <div class="glass p-8 rounded-[2.5rem] border border-white/5 relative">
+            <div id="sb" class="glass p-8 rounded-[2.5rem] border border-white/5 hover:border-orange-500/20 transition-all">
                 <div class="flex justify-between items-start mb-4">
                     <div class="text-orange-500 font-black text-4xl">SB</div>
                     <span class="detail-badge">Boundary Point</span>
                 </div>
-                <h2 class="text-xl font-bold uppercase mb-4 text-orange-400">Managing a Stage Boundary</h2>
-                <div class="space-y-4 text-sm text-slate-400">
-                    <p>Preparing for the next stage and reporting on the current one.</p>
-                    <ul class="list-disc list-inside space-y-1">
-                        <li>Create the Next Stage Plan</li>
-                        <li>Update Project Plan and Business Case</li>
-                        <li>Produce the <b class="text-white">End Stage Report</b></li>
+                <h2 class="text-xl font-bold uppercase mb-4 text-orange-400 italic">Managing a Stage Boundary</h2>
+                <div class="space-y-4 text-sm text-slate-400 leading-relaxed">
+                    <p>Preparing the Board to make a "Go/No-Go" decision on the next stage.</p>
+                    <ul class="list-disc list-inside space-y-2 marker:text-orange-500">
+                        <li>Create the <b class="text-white">Next Stage Plan</b></li>
+                        <li>Update the Business Case with current costs</li>
+                        <li>Produce the End Stage Report</li>
                     </ul>
                 </div>
             </div>
 
-            <div class="glass p-8 rounded-[2.5rem] border border-red-500/20 bg-red-500/5 col-span-1 md:col-span-2">
+            <div id="cp" class="glass p-8 rounded-[2.5rem] border border-red-500/20 bg-red-500/5 col-span-1 md:col-span-2">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div class="md:col-span-1">
                         <div class="text-red-500 font-black text-4xl mb-4">CP</div>
-                        <h2 class="text-xl font-bold uppercase mb-2 text-red-400">Closing a Project</h2>
-                        <span class="detail-badge">Final Stage</span>
+                        <h2 class="text-xl font-bold uppercase mb-2 text-red-400 italic">Closing a Project</h2>
+                        <span class="detail-badge border border-red-500/20">Final Stage Only</span>
                     </div>
                     <div class="md:col-span-2 text-sm text-slate-400 space-y-4">
-                        <p>An organized finish to the project. Prevents "project drift" and ensures formal handover.</p>
+                        <p>Provides a fixed point to check that products are accepted and the project can end.</p>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <ul class="list-disc list-inside space-y-1">
-                                <li>Hand over products</li>
-                                <li>Capture Lessons Learned</li>
+                            <ul class="list-disc list-inside space-y-2 marker:text-red-500">
+                                <li>Hand over products formally</li>
+                                <li>Capture <b class="text-white">Lessons Learned</b></li>
                             </ul>
-                            <ul class="list-disc list-inside space-y-1">
-                                <li>Produce End Project Report</li>
-                                <li>Recommend Project Closure</li>
+                            <ul class="list-disc list-inside space-y-2 marker:text-red-500">
+                                <li>Issue End Project Report</li>
+                                <li>Notify corporate that project is ending</li>
                             </ul>
                         </div>
                     </div>
@@ -169,6 +239,8 @@
 
         </div>
     </main>
+
+    
 
     <footer class="p-12 text-center text-slate-600 text-xs tracking-widest uppercase border-t border-white/5">
         Mastering the flow: SU → IP → CS/MP (Loop) → SB → CP
