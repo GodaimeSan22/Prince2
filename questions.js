@@ -176,11 +176,16 @@ const questions = [
         rationale: "The commissioning party (Corporate/Programme) triggers the project and is responsible for appointing the Project Executive via the project mandate."
     },
     {
-        category: "ORGANIZING",
+        category: "PRACTICES: ORGANIZING",
         question: "In which step of the organizational design and development technique should responsibility for setting personal objectives be agreed?",
-        options: ["Understand the organizational ecosystem", "Develop the project ecosystem", "Design the project ecosystem", "Transition the project into the organizational ecosystem"],
-        correct: 1,
-        rationale: "The 'Develop' step involves making the project team operational, which includes agreeing on personal objectives and onboarding members."
+        options: [
+            "Understand the organizational ecosystem", 
+            "Design the project ecosystem", 
+            "Develop the project ecosystem", 
+            "Transition the project into the organizational ecosystem"
+        ],
+        correct: 0, 
+        rationale: "Correct. During the 'Understand the organizational ecosystem' step, clarity is required on who retains responsibility for people management, performance management (including personal objectives), and rewards. Ref 6.3.1.1"
     },
     {
         category: "PLANS",
@@ -351,11 +356,16 @@ const questions = [
         rationale: "Changes to project-level tolerances (the overall project finish date) must be approved by the Business Layer (Corporate or Programme management)."
     },
     {
-        category: "PROGRESS",
+        category: "PRACTICES: PROGRESS",
         question: "What action may be taken by a project manager when an issue causes one of the stage tolerances to be exceeded?",
-        options: ["Accept or reject the recommendation from the exception report", "Resolve the issue within other project tolerances", "Escalate to the business layer for advice", "Resolve the issue using other stage tolerances and include in the next highlight report"],
-        correct: 1,
-        rationale: "This is a trick question. If a *stage* tolerance is exceeded, the PM must escalate to the Board. However, if they can resolve it within the *existing* stage tolerances, it is not an exception."
+        options: [
+            "Accept or reject the recommendation from the exception report", 
+            "Resolve the issue within other project tolerances", 
+            "Escalate to the business layer for advice", 
+            "Resolve the issue using other stage tolerances and include in the next highlight report"
+        ],
+        correct: 3,
+        rationale: "Correct. According to the 'exception management' technique, if the issue can be resolved by the project manager within the stage tolerances, it does not require an exception report and should be included in the next highlight report. Ref 11.3.1.1"
     },
     {
         category: "PROCESSES",
@@ -402,9 +412,14 @@ const questions = [
     {
         category: "PROCESSES",
         question: "During 'managing a stage boundary', when should the project manager replan the rest of the stage?",
-        options: ["After reporting a tolerance breach", "After receiving advice in response to a highlight report", "After requesting board approval for an exception plan", "After requesting board approval for a team change"],
-        correct: 2,
-        rationale: "Managing a Stage Boundary is used to create an Exception Plan (replanning the stage) if the Board requests it after a tolerance breach."
+        options: [
+            "After reporting a tolerance breach", 
+            "After receiving advice in response to a highlight report", 
+            "After requesting board approval for an exception plan", 
+            "After requesting board approval for a team change"
+        ],
+        correct: 0, 
+        rationale: "Correct. The process of 'managing a stage boundary' provides the means to implement an exception procedure. This is triggered when the project manager forecasts that stage or project tolerances are likely to be exceeded (a breach). Ref 18.3"
     },
     {
         category: "PROCESSES",
